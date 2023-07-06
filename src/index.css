@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .gradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.23012955182072825) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+} */
+
+.gradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.2945553221288515) 75%,
+    rgba(0, 0, 0, 0.165703781512605) 85%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.bg-color-1 {
+  background-color: #b0dc4d;
+}
+.bg-color-2 {
+  background-color: #ecd85d;
+}
+.bg-color-3 {
+  background-color: #181607;
+}
+.bg-color-4 {
+  background-color: #807970;
+}
+.bg-color-5 {
+  background-color: #f3eae8;
+}
+.bg-color-6 {
+  background-color: #555049;
+}
+
+.text-color-1 {
+  color: #b0dc4d;
+}
+.text-color-2 {
+  color: #ecd85d;
+}
+.text-color-3 {
+  color: #181607;
+}
+.text-color-4 {
+  color: #807970;
+}
+.text-color-5 {
+  color: #f3eae8;
+}
