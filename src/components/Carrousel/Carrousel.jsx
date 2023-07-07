@@ -20,6 +20,7 @@ const Carousel = ({ images }) => {
       <img
         src={images[currentImageIndex]}
         alt="imagenProject"
+        className='scale-90'
       />
 
       <button
@@ -41,7 +42,7 @@ const Carousel = ({ images }) => {
           <div
             key={index}
             onClick={() => selectImage(index)}
-            className={`w-2 h-2 mx-1 rounded-full ${index === currentImageIndex ? 'bg-black' : 'bg-gray-400'
+            className={`w-2 h-2 mx-1 rounded-full hover:cursor-pointer ${index === currentImageIndex ? 'bg-black' : 'bg-gray-400'
               }`}
           />
         ))}

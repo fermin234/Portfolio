@@ -1,7 +1,7 @@
 export default function Educacion() {
   return (
     <section id="educacion" className="bg-color-4 w-full min-h-screen py-[4vh] flex flex-col justify-center items-center font-Montserrat">
-      <h1 className="mb-5 text-2xl font-bold text-color-3">EDUCACIÓN</h1>
+      <h1 className="mb-5 text-[40px] max-[715px]:text-[28px] font-bold text-color-3">EDUCACIÓN</h1>
       <div className="flex gap-10 max-[1260px]:flex-col px-5">
 
         <div className="border-2 border-[#ecd85d] flex flex-col max-w-[600px] items-center p-5 gap-5 text-lg">

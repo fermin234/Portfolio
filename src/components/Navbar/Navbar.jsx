@@ -29,19 +29,19 @@ export default function Navbar() {
       <div className={`${color ? "bg-[#120f07] h-[4vh]" : "gradient h-[8vh]"} max-[620px]:bg-[#120f07] w-full flex items-center transition-all duration-1000`}>
         <div className="flex justify-center items-center gap-5 max-[620px]:hidden w-full text-white">
           <a href="/" className={`${pathname !== "/" ? "" : "hidden"}`}>Inicio</a>
-          <Link to="about" smooth={true} duration={500} className='hover:cursor-pointer'>
+          <Link to="about" smooth={true} duration={1000} className='hover:cursor-pointer'>
             Sobre mí
           </Link>
-          <Link to="educacion" smooth={true} duration={500} className='hover:cursor-pointer'>
+          <Link to="educacion" smooth={true} duration={1000} className='hover:cursor-pointer'>
             Educación
           </Link>
-          <Link to="technologies" smooth={true} duration={500} className='hover:cursor-pointer'>
+          <Link to="technologies" smooth={true} duration={1000} className='hover:cursor-pointer'>
             Mís Tecnologías
           </Link>
-          <Link to="projects" smooth={true} duration={500} className='hover:cursor-pointer'>
+          <Link to="projects" smooth={true} duration={1000} className='hover:cursor-pointer'>
             Proyectos
           </Link>
-          <Link to="about" smooth={true} duration={500} className='hover:cursor-pointer'>
+          <Link to="contact" smooth={true} duration={1000} className='hover:cursor-pointer'>
             Contacto
           </Link>
         </div>
@@ -56,19 +56,19 @@ export default function Navbar() {
       <div onClick={() => setDrawer(false)} className={`${drawer ? "" : "hidden"} w-full h-screen`}>
         <div className={`bg-[#f3eae8] flex flex-col items-center gap-2 py-2`}>
           <a href="/" className={`${pathname !== "/" ? "" : "hidden"} bg-blue-100 w-full text-center py-1`}>Inicio</a>
-          <Link to="about" smooth={true} duration={500} className='hover:cursor-pointer bg-blue-100 w-full text-center py-1'>
+          <Link to="about" smooth={true} duration={1000} className='hover:cursor-pointer bg-blue-100 w-full text-center py-1'>
             Sobre mí
           </Link>
-          <Link to="technologies" smooth={true} duration={500} className='hover:cursor-pointer bg-blue-100 w-full text-center py-1'>
+          <Link to="technologies" smooth={true} duration={1000} className='hover:cursor-pointer bg-blue-100 w-full text-center py-1'>
             Mís Tecnologías
           </Link>
-          <Link to="about" smooth={true} duration={500} className='hover:cursor-pointer bg-blue-100 w-full text-center py-1'>
+          <Link to="about" smooth={true} duration={1000} className='hover:cursor-pointer bg-blue-100 w-full text-center py-1'>
             Proyectos
           </Link>
-          <Link to="about" smooth={true} duration={500} className='hover:cursor-pointer bg-blue-100 w-full text-center py-1'>
+          <Link to="about" smooth={true} duration={1000} className='hover:cursor-pointer bg-blue-100 w-full text-center py-1'>
             Experiencia Laboral
           </Link>
-          <Link to="about" smooth={true} duration={500} className='hover:cursor-pointer bg-blue-100 w-full text-center py-1'>
+          <Link to="about" smooth={true} duration={1000} className='hover:cursor-pointer bg-blue-100 w-full text-center py-1'>
             Contacto
           </Link>
         </div>

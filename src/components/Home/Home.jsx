@@ -4,6 +4,8 @@ import Inicio from '../Inicio/Inicio.jsx'
 import Educacion from '../Educacion/Educacion.jsx'
 import ProjectsHighlighted from '../Projects/ProjectsHighlighted.jsx'
 import Technologies from '../Technologies/Technologies.jsx'
+import Contact from '../Contact/Contact.jsx'
+import Arrow from '../Arrow/Arrow.jsx'
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
       <Educacion />
       <Technologies />
       <ProjectsHighlighted />
+      <Contact />
+      <Arrow />
       <Footer />
     </div>
   )

@@ -1,7 +1,7 @@
 export default function About() {
   return (
-    <section id="about" className="w-full min-h-screen flex flex-col justify-center items-center px-[4vh] py-[4vh] bg-color-6 text-center font-Montserrat">
-      <h1 className="mb-5 text-2xl font-bold text-color-3">SOBRE MÍ</h1>
+    <section id="about" className="w-full md:px-[10%] min-h-screen flex flex-col justify-center items-center px-[4vh] py-[4vh] bg-color-6 text-center font-Montserrat">
+      <h1 className="mb-5 text-[40px] max-[715px]:text-[28px] font-bold text-color-3">SOBRE MÍ</h1>
       <p>
         Me llamo Fermín y soy FullStack Developer. La programación no es solo
         mi trabajo, sino lo que me apasiona. Creo que mantenerse en constante
@@ -21,9 +21,9 @@ export default function About() {
       <a
         rel="noreferrer"
         target="_blank"
-        className="border-[#ecd85d] w-fit border-2 px-2 font-Montserrat text-2xl text-color-2 hover:cursor-pointer"
+        className="border-[#ecd85d] hover:bg-[#ecd85d] hover:text-[#181607] w-fit border-2 px-2 font-Montserrat text-2xl text-color-2 hover:cursor-pointer"
         download="fermin-Solaberrieta CV.pdf"
-        href="assets/Fermin Solaberrieta CV.pdf"
+        href="assets/cv/Fermin Solaberrieta CV.pdf"
         title="CV_PDF"
       >
         Currículum
