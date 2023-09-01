@@ -15,6 +15,7 @@ export function Javascript() {
 export function React() {
   return (
     <img
+      name="adasdasdasd"
       alt="react"
       width="30px"
       src="https://user-images.githubusercontent.com/102181381/185236678-4d3a20e6-4ac7-4e61-a2bd-66c98f576ecf.svg"
@@ -25,6 +26,7 @@ export function React() {
 export function Express() {
   return (
     <img
+      name="adasdasdasd"
       alt="express"
       width="30px"
       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"

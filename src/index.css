@@ -58,3 +58,11 @@
   opacity: 0;
   transition: opacity 0.5s ease-out;
 }
+
+.text-image-container {
+  column-count: 2; /* Establece el número de columnas, puedes ajustarlo según tus necesidades */
+}
+
+.text-image-container img {
+  width: 100%; /* Establece el ancho de la imagen para que el texto se envuelva correctamente */
+}

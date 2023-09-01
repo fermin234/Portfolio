@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import useModal from '../../hooks/useModal/useModal'
 
-const Carousel = ({ images }) => {
+
+const Carousel = ({ images, scale }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { isOpen, openModal, closeModal } = useModal()
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -16,25 +20,24 @@ const Carousel = ({ images }) => {
   };
 
   return (
-    <div className="relative flex justify-center items-center">
-      <img
-        src={images[currentImageIndex]}
-        alt="imagenProject"
-        className='scale-90'
-      />
-
+    <div className='relative flex justify-center'>
       <button
         onClick={previousImage}
-        className="absolute left-[6%] top-1/2 transform -translate-y-1/2 px-4 py-2 text-white bg-black bg-opacity-50 rounded-full"
-      >
-        {'<'}
+        className="bg-slate-400 hover:bg-slate-500 hover:text-slate-400 w-[50px] max-[900px]:absolute max-[900px]:left-0 max-[900px]:h-full max-[900px]:w-[50%] max-[900px]:opacity-0">
+        <AiOutlineArrowLeft className='w-full h-full' />
       </button>
+
+      <figcaption>
+        <img
+          src={images[currentImageIndex]}
+          alt="imagenProject"
+        />
+      </figcaption>
 
       <button
         onClick={nextImage}
-        className="absolute right-[6%] top-1/2 transform -translate-y-1/2 px-4 py-2 text-white bg-black bg-opacity-50 rounded-full"
-      >
-        {'>'}
+        className="bg-slate-400 hover:bg-slate-500 hover:text-slate-400 w-[50px] max-[900px]:absolute max-[900px]:right-0 max-[900px]:h-full max-[900px]:opacity-0 max-[900px]:w-[50%] ">
+        <AiOutlineArrowRight className='w-full h-full' />
       </button>
 
       <div className="absolute bottom-2 left-0 right-0 flex justify-center">
@@ -42,8 +45,7 @@ const Carousel = ({ images }) => {
           <div
             key={index}
             onClick={() => selectImage(index)}
-            className={`w-2 h-2 mx-1 rounded-full hover:cursor-pointer ${index === currentImageIndex ? 'bg-black' : 'bg-gray-400'
-              }`}
+            className={`w-2 h-2 mx-1 rounded-full hover:cursor-pointer ${index === currentImageIndex ? 'bg-black' : 'bg-gray-400'}`}
           />
         ))}
       </div>
