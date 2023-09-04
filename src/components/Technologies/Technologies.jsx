@@ -45,6 +45,11 @@ export default function Technologies() {
         <div id="back" className="flex justify-center py-5">
           <div className="flex flex-col gap-5">
             <div className="flex justify-start items-center gap-2">
+              <img alt="NestJS" className="max-[750px]:w-[30px] w-[60px]" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" />
+              <h1><button className="w-[10px] h-[10px] bg-[#DF234F] rounded-full mr-2"></button>NestJS</h1>
+            </div>
+
+            <div className="flex justify-start items-center gap-2">
               <img alt="nodeJs" className="max-[750px]:w-[30px] w-[60px]" src="https://user-images.githubusercontent.com/102181381/185236647-b3712d46-4a0b-4cf8-b761-d53ca8c26fe2.svg" />
               <h1><button className="w-[10px] h-[10px] bg-[#83CD29] rounded-full mr-2"></button>NodeJS</h1>
             </div>
@@ -71,6 +76,12 @@ export default function Technologies() {
                 <h1><button className="w-[10px] h-[10px] bg-[#439934] rounded-full mr-2"></button>Mongoose</h1>
               </div>
             </div>
+            <div className="flex justify-start items-center gap-2">
+              <img alt="MySQLm" className="max-[750px]:w-[30px] w-[60px]" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain.svg" />
+              <h1><button className="w-[10px] h-[10px] bg-[#00618A] rounded-full mr-2"></button>MySQL</h1>
+            </div>
+
+
           </div>
         </div>
         <div id="others" className="flex justify-center py-5">
