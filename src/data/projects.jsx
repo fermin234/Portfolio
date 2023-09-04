@@ -2,29 +2,54 @@ import { Javascript, React, CSS, Express, Git, HTML, Nodejs, PostgreSQL, Redux, 
 import imagesGameInformer from '../assets/GameInformer'
 import imagesCoachingEmpleo from '../assets/CoachingEmpleo'
 import imagesEasyLeadrning from '../assets/EasyLeadrning'
+import imagesInmobiliariaMartinez from '../assets/InmobiliariaMartinez'
 
 const projects = [
   {
     title: "-TJ Inmobiliaria-",
     description:
-      "Se trata de una Spa (Simple Page Application) desarrollada con React y Redux como state management. Todos los componentes fueron creados con CSS sin uso de librerías externas. La SPA consume datos de una API a través de un Back End, que fue desarrollado en Node.JS con Express. La aplicación cuenta con un listado de 705 videojuegos con su información correspondiente detallada (imágenes, géneros, fecha de lanzamiento, etc.). Las funciones que se ofrecen para el usuario son: filtrar, ordenar, crear, eliminar y/o guardar como favorito los videojuegos.",
-    technologies: [<Nextjs13 />, <Javascript />, <React />, <Chartjs />, <Tailwind />, <MailJS />, <Git />, <HTML />, <Trello />, <GitHub />],
-    aplication: "https://formulario-xx6k.vercel.app/",
-    code: "https://github.com/GroupFiveDev/Formulario",
-    images: imagesCoachingEmpleo,
+      <>
+        <p>
+          Aplicación web para reconocida Inmobiliaria en Colón, Buenos Aires. Explora propiedades, visualízalas en un mapa interactivo y gestiona tu cartera.
+        </p>
+        <br />
+
+        <p>
+          <strong>Exploración de Propiedades:</strong><br />
+          La aplicación web permite a los usuarios explorar todas las propiedades en venta de la inmobiliaria. Los usuarios pueden navegar a través de un catálogo completo de propiedades y aplicar diversos filtros para encontrar la propiedad ideal. Estos filtros incluyen la capacidad de buscar propiedades por fecha de listado y rango de precios. Además, los usuarios pueden segmentar las propiedades por tipo, ya sea departamentos o campos, para una búsqueda aún más específica.
+        </p>
+        <br />
+
+        <p>
+          <strong>Visualización en Mapa:</strong><br />
+          Una característica destacada de la aplicación es la sección de mapas, que muestra la ubicación precisa de todas las propiedades en un mapa interactivo. Los usuarios pueden ver visualmente la distribución geográfica de las propiedades disponibles y hacer clic en cada marcador para obtener información detallada de la propiedad, lo que facilita la ubicación de propiedades en áreas de interés.
+        </p>
+        <br />
+
+        <p>
+          <strong>Detalles de Propiedad:</strong><br />
+          Al hacer clic en una propiedad en el mapa o en la lista de propiedades, los usuarios pueden acceder a un pequeño detalle que proporciona información esencial sobre la propiedad. Esto incluye detalles como el número de habitaciones, baños, área total y descripción. Esta función brinda a los usuarios una vista rápida de las características clave de cada propiedad.
+        </p>
+        <br />
+
+        <p>
+          <strong>Sección "Nosotros":</strong><br />
+          La sección "Nosotros" de la aplicación web ofrece una visión completa de la experiencia y trayectoria de la inmobiliaria. Los usuarios pueden obtener información sobre la historia de la empresa, sus valores y su compromiso con la satisfacción del cliente. Esta sección ayuda a establecer la confianza y la credibilidad de la inmobiliaria.
+        </p>
+        <br />
+
+        <p>
+          <strong>Funcionalidad del Administrador:</strong><br />
+          Para el equipo de administradores de la inmobiliaria, la aplicación proporciona un conjunto de herramientas poderosas. Los administradores tienen la capacidad de crear nuevas propiedades en la plataforma, incluyendo la carga de imágenes relacionadas que se almacenan de forma segura en Cloudinary. Además, pueden gestionar el estado de las propiedades, marcándolas como vendidas cuando se cierra una venta, archivándolas para futuras referencias o eliminándolas si ya no están disponibles en el mercado.
+        </p>
+      </>
+    ,
+    technologies: [, <Javascript />, <Express />, <Nodejs />, <Sequelize />, <PostgreSQL />, <React />, <Tailwind />, <Git />, <HTML />, <GitHub />],
+    aplication: "https://www.martineznessicampos.com/",
+    code: "https://github.com/GroupFiveDev/Martinez-Inmobiliaria-SRL",
+    images: imagesInmobiliariaMartinez,
     responsive: 5,
     featured: true
-  },
-  {
-    title: "-EasyLearning-",
-    description:
-      "Desarrollo grupal de una API REST en Node.js con metodología SCRUM, junto con otros 6 desarrolladores y un líder técnico, con una duración de 4 semanas. Se trata de una página web desarrollada con React y Redux. Utilizando librerías de estilos como Chakra.UI y Chart.js para gráficos de estadísticas (en el dashboard del admin). La página tiene un Back End, que fue desarrollado en Node.JS con Express y una base de datos en postgreSQL (Sequelize como ORM). La aplicación te da la posibilidad de comprar y vender cursos. Las funciones que se ofrecen para el usuario son: ver detalles del curso, filtrar, ordenar, crear, editar eliminar y/o guardar como favorito los cursos. También cuenta con la función de loguearse y crearse una cuenta. Las transacciones se realizan por medio de paypal y el administrador de la página cuenta con un dashboard personalizado.",
-    technologies: [<Javascript />, <Express />, <Nodejs />, <React />, <Redux />, <Sequelize />, <PostgreSQL />, <NodeMailer />, <Chakra />, <Git />, <HTML />, <CSS />, <Trello />, <GitHub />],
-    aplication: "https://easy-learning-414mpg2kj-fran3003.vercel.app/",
-    code: "https://github.com/diazjoaquin/EasyLearning",
-    images: imagesEasyLeadrning,
-    responsive: 0,
-    featured: false
   },
   {
     title: "-Game Informer-",
@@ -97,7 +122,17 @@ const projects = [
     responsive: 5,
     featured: true
   },
-
+  {
+    title: "-EasyLearning-",
+    description:
+      "Desarrollo grupal de una API REST en Node.js con metodología SCRUM, junto con otros 6 desarrolladores y un líder técnico, con una duración de 4 semanas. Se trata de una página web desarrollada con React y Redux. Utilizando librerías de estilos como Chakra.UI y Chart.js para gráficos de estadísticas (en el dashboard del admin). La página tiene un Back End, que fue desarrollado en Node.JS con Express y una base de datos en postgreSQL (Sequelize como ORM). La aplicación te da la posibilidad de comprar y vender cursos. Las funciones que se ofrecen para el usuario son: ver detalles del curso, filtrar, ordenar, crear, editar eliminar y/o guardar como favorito los cursos. También cuenta con la función de loguearse y crearse una cuenta. Las transacciones se realizan por medio de paypal y el administrador de la página cuenta con un dashboard personalizado.",
+    technologies: [<Javascript />, <Express />, <Nodejs />, <React />, <Redux />, <Sequelize />, <PostgreSQL />, <NodeMailer />, <Chakra />, <Git />, <HTML />, <CSS />, <Trello />, <GitHub />],
+    aplication: "https://easy-learning-414mpg2kj-fran3003.vercel.app/",
+    code: "https://github.com/diazjoaquin/EasyLearning",
+    images: imagesEasyLeadrning,
+    responsive: 0,
+    featured: false
+  },
 ];
 
 export default projects;
