@@ -95,11 +95,7 @@ export default function Navbar({ status, setStatus }) {
           <Link to="technologies" smooth="true" duration={1000} className='hover:cursor-pointer hover:opacity-25' onClick={() => handleClick("technologies")}>
             Mís Tecnologías
           </Link>
-          {/* <Link to="projects" smooth="true" duration={1000} className='hover:cursor-pointer hover:opacity-25' onClick={() => handleClick("projects")}>
-            Proyectos
-          </Link> */}
-
-          <div className={`hover:cursor-pointer hover:opacity-25 w-fit ${status ? "hover:opacity-100" : "hover:opacity-25"}`} onClick={() => setStatus(!status)}>
+          <div className={`hover:cursor-pointer w-fit ${status ? "hover:opacity-100" : "hover:opacity-25"}`} onClick={() => setStatus(!status)}>
             <p className='flex justify-center items-center gap-1'>
               Mis Proyectos
               <IoIosArrowDown />
