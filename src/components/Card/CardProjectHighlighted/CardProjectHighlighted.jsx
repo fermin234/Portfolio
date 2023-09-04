@@ -2,6 +2,7 @@ import { useState } from "react";
 import Carousel from "../../Carrousel/Carrousel";
 import rombo_fill from '../../../assets/Icons/rombo_fill.png'
 import rombo_unfill from '../../../assets/Icons/rombo_unfill.png'
+import Tooltip from '../../Tooltip/Tooltip'
 
 export default function CardProjects({ project }) {
 
@@ -9,6 +10,7 @@ export default function CardProjects({ project }) {
   const romboFillLength = Array.from({ length: responsive });
   const romboUnfillLength = Array.from({ length: 5 - responsive });
   const [seeMore, setSeeMore] = useState(false)
+  const [hoveredTech, setHoveredTech] = useState(null);
 
 
   return (
@@ -41,8 +43,11 @@ export default function CardProjects({ project }) {
           <div className="flex flex-wrap justify-center items-center gap-2 w-full h-full">
             {technologies.map((Technology, techIndex) => (
               <div
+                onMouseEnter={() => setHoveredTech(Technology)}
+                onMouseLeave={() => setHoveredTech(null)}
                 key={techIndex}
-                className="flex flex-col justify-center items-center">
+                className="flex flex-col justify-center items-center relative ">
+                {hoveredTech === Technology && <Tooltip text={Technology.type.name} />}
                 {Technology}
               </div>
             ))}

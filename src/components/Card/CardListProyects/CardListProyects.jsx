@@ -3,6 +3,7 @@ import useModal from '../../../hooks/useModal/useModal'
 import ImageModal from '../../Modal/ImageModal/ImageModal'
 import Carrousel from '../../Carrousel/Carrousel'
 import { AiOutlineStar } from 'react-icons/ai';
+import Tooltip from '../../Tooltip/Tooltip';
 
 export default function OtherCard({ project }) {
 
@@ -10,6 +11,7 @@ export default function OtherCard({ project }) {
   const { isOpen, openModal, closeModal } = useModal()
 
   const [seeMore, setSeeMore] = useState(false)
+  const [hoveredTech, setHoveredTech] = useState(null);
 
   return (
     <>
@@ -46,11 +48,19 @@ export default function OtherCard({ project }) {
               </h1>
             </div>
             <div className='flex flex-col max-[1150px]:hidden gap-5'>
-              <div className='flex items-center justify-center gap-2 mb-2'>
-                {technologies.map((technology, techIndex) => (
-                  <div key={techIndex}>{technology}</div>
+              <div className='flex items-center justify-center gap-2'>
+                {technologies.map((Technology, techIndex) => (
+                  <div
+                    onMouseEnter={() => setHoveredTech(Technology)}
+                    onMouseLeave={() => setHoveredTech(null)}
+                    key={techIndex}
+                    className="flex flex-col justify-center items-center relative ">
+                    {hoveredTech === Technology && <Tooltip text={Technology.type.name} />}
+                    {Technology}
+                  </div>
                 ))}
               </div>
+
               <div className="font-Montserrat flex justify-center w-full items-center gap-10">
                 <a
                   rel="noreferrer"
@@ -75,11 +85,25 @@ export default function OtherCard({ project }) {
         </div>
 
         <div className='flex flex-col min-[1151px]:hidden'>
-          <div className='flex items-center justify-center gap-2 mb-2'>
+          {/* <div className='flex items-center justify-center gap-2 mb-2'>
             {technologies.map((technology, techIndex) => (
               <div key={techIndex}>{technology}</div>
             ))}
+          </div> */}
+
+          <div className='flex items-center justify-center gap-2 mb-2'>
+            {technologies.map((Technology, techIndex) => (
+              <div
+                onMouseEnter={() => setHoveredTech(Technology)}
+                onMouseLeave={() => setHoveredTech(null)}
+                key={techIndex}
+                className="flex flex-col justify-center items-center relative ">
+                {hoveredTech === Technology && <Tooltip text={Technology.type.name} />}
+                {Technology}
+              </div>
+            ))}
           </div>
+
           <div className="font-Montserrat flex justify-center w-full items-center gap-10">
             <a
               rel="noreferrer"
