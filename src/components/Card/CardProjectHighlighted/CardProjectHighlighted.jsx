@@ -14,15 +14,24 @@ export default function CardProjects({ project }) {
 
 
   return (
-    <div>
-      <div className="w-[60%] float-right pl-2 max-[1526px]:hidden">
+    <div className="relative">
+      <div className="w-[60%] float-right max-[1526px]:hidden pl-2">
         <Carousel images={images} />
       </div>
-      <h1 className="font-bold text-2xl text-color-2 pb-4">{title}</h1>
-      <div className={`${seeMore ? "line-clamp-none" : "line-clamp-[12]"} md:text-lg text-sm`}>{description}</div>
-      <button onClick={() => setSeeMore(!seeMore)} className={`${description.length < 750 && "hidden"} text-color-2 hover:opacity-60`}>{seeMore ? "Ver menos" : "Ver mas"}</button>
 
-      <div className={`${seeMore ? "w-full" : "w-[40%]"} max-[1526px]:w-full h-full`}>
+      <h1 className="font-bold text-2xl text-color-2 pb-4">
+        {title}
+      </h1>
+
+      <div className={`${seeMore ? "line-clamp-none" : "line-clamp-[9] max-[1830px]:line-clamp-[7] max-[1700px]:line-clamp-[6] max-[1620px]:line-clamp-[5] max-[1549px]:line-clamp-[6]"} md:text-lg text-sm`}>
+        {description}
+      </div>
+
+      <button onClick={() => setSeeMore(!seeMore)} className={`${description.length < 750 && "hidden"} text-color-2 hover:opacity-60`}>
+        {seeMore ? "Ver menos" : "Ver mas"}
+      </button>
+
+      <div className={`${seeMore ? "w-full" : "w-[40%]"} ${seeMore ? "" : "min-[1526px]:absolute"} max-[1526px]:w-full min-[1526px]:bottom-0`}>
         <div className="max-[1526px]:flex hidden">
           <Carousel images={images} />
         </div>
@@ -31,14 +40,9 @@ export default function CardProjects({ project }) {
 
           <div className="w-full flex items-center justify-center gap-1">
             <h1 className="font-Montserrat text-color-2 font-semibold">Responsive: </h1>
-            {
-              romboFillLength.map((e, i) => <img key={`"rombo ${i}`} src={rombo_fill} />)
-            }
-            {
-              romboUnfillLength.map((e, i) => <img key={`"rombo2 ${i}`} src={rombo_unfill} />)
-            }
+            {romboFillLength.map((e, i) => <img key={`"rombo ${i}`} src={rombo_fill} />)}
+            {romboUnfillLength.map((e, i) => <img key={`"rombo2 ${i}`} src={rombo_unfill} />)}
           </div>
-
 
           <div className="flex flex-wrap justify-center items-center gap-2 w-full h-full">
             {technologies.map((Technology, techIndex) => (
@@ -73,6 +77,6 @@ export default function CardProjects({ project }) {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

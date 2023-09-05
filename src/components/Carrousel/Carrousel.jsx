@@ -23,7 +23,7 @@ const Carousel = ({ images, scale }) => {
     <div className='relative flex justify-center'>
       <button
         onClick={previousImage}
-        className="bg-black text-color-2 hover:bg-[#b0dc4d] hover:text-black w-[50px] max-[900px]:absolute max-[900px]:left-0 max-[900px]:h-full max-[900px]:w-[50%] max-[900px]:opacity-0">
+        className="bg-black text-color-2 hover:bg-[#ecd85d] hover:text-black w-[50px] max-[900px]:absolute max-[900px]:left-0 max-[900px]:h-full max-[900px]:w-[50%] max-[900px]:opacity-0">
         <AiOutlineArrowLeft className='w-full h-full' />
       </button>
 
@@ -36,7 +36,7 @@ const Carousel = ({ images, scale }) => {
 
       <button
         onClick={nextImage}
-        className="bg-black text-color-2 hover:bg-[#b0dc4d] hover:text-black w-[50px] max-[900px]:absolute max-[900px]:right-0 max-[900px]:h-full max-[900px]:opacity-0 max-[900px]:w-[50%] ">
+        className="bg-black text-color-2 hover:bg-[#ecd85d] hover:text-black w-[50px] max-[900px]:absolute max-[900px]:right-0 max-[900px]:h-full max-[900px]:opacity-0 max-[900px]:w-[50%] ">
         <AiOutlineArrowRight className='w-full h-full' />
       </button>
 
