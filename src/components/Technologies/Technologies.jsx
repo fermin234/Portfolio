@@ -1,5 +1,5 @@
-import cloudinary from '../../assets/Icons/cloudinarypng.png'
-import mailJS from '../../assets/Icons/mailJS.png'
+import cloudinary from '../../assets/Icons/cloudinarywebp.webp'
+import mailJS from '../../assets/Icons/mailJS.webp'
 
 export default function Technologies() {
   return (

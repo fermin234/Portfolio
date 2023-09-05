@@ -1,6 +1,6 @@
-import mailJS from '../../assets/Icons/mailJS.png'
-import nodeMailer from '../../assets/Icons/nodemailer.png'
-import chakra from '../../assets/Icons/chakra.png'
+import mailJS from '../../assets/Icons/mailJS.webp'
+import nodeMailer from '../../assets/Icons/nodemailer.webp'
+import chakra from '../../assets/Icons/chakra.webp'
 
 export function Javascript() {
   return (

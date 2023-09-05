@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Carousel from "../../Carrousel/Carrousel";
-import rombo_fill from '../../../assets/Icons/rombo_fill.png'
-import rombo_unfill from '../../../assets/Icons/rombo_unfill.png'
+import rombo_fill from '../../../assets/Icons/rombo_fill.webp'
+import rombo_unfill from '../../../assets/Icons/rombo_unfill.webp'
 import Tooltip from '../../Tooltip/Tooltip'
 
 export default function CardProjects({ project }) {

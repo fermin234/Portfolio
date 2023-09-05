@@ -6,7 +6,7 @@ export default function Contact() {
         rel="noreferrer"
         target="_blank"
         className="font-extrabold border-[#ecd85d] hover:bg-[#ecd85d] hover:text-[#181607] w-fit border-2 px-2 font-Montserrat text-2xl text-color-2 hover:cursor-pointer"
-        href="mailto:fermin234@hotmail.com"
+        href="mailto:fermindev@gmail.com"
       >Enviame un email
       </a>
     </section>
