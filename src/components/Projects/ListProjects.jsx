@@ -1,4 +1,4 @@
-import CardListProyects from "../Card/CardListProyects/CardListProyects";
+import CardProyect from "../Card/CardProyect/CardProyect";
 import projects from '../../data/projects'
 import { useEffect } from "react";
 
@@ -13,7 +13,7 @@ export default function ListProyects() {
       <h1 className="mb-5 text-[40px] max-[715px]:text-[28px] font-bold text-color-3 flex justify-center">PROYECTOS</h1>
       <div className="grid grid-cols-2 max-[1600px]:grid-cols-1 gap-5 px-5">
         {
-          projects?.length && projects.map((e, i) => <CardListProyects key={i} project={e} />)
+          projects?.length && projects.map((e, i) => <CardProyect key={i} project={e} />)
         }
       </div>
     </section>

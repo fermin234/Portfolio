@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Carousel = ({ images }) => {
+  const { pathname } = useHistory().location
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
@@ -17,7 +19,7 @@ const Carousel = ({ images }) => {
   };
 
   return (
-    <div className='relative flex justify-center'>
+    <div className={`relative flex justify-center ${pathname.includes("proyectos") ? "" : "max-h-[532px]"} overflow-hidden`}>
       <button
         onClick={previousImage}
         className="bg-black text-color-2 hover:bg-[#ecd85d] hover:text-black w-[50px] max-[900px]:absolute max-[900px]:left-0 max-[900px]:h-full max-[900px]:w-[50%] max-[900px]:opacity-0">
