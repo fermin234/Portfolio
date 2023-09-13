@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
-import useModal from '../../hooks/useModal/useModal'
 
-
-const Carousel = ({ images, scale }) => {
+const Carousel = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { isOpen, openModal, closeModal } = useModal()
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);

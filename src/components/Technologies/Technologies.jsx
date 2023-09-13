@@ -8,6 +8,7 @@ export default function Technologies() {
       <div className="w-full grid  max-[476px]:grid-cols-2 max-[314px]:grid-cols-1 grid-cols-3">
         <div id="front" className="flex justify-center py-5">
           <div className="flex flex-col gap-5">
+            <h1 className='text-center font-Montserrat text-2xl font-extrabold text-white'>FrontEnd</h1>
             <div className="flex justify-start items-center gap-2">
               <img alt="javascript" className="max-[750px]:w-[30px] w-[60px]" src="https://user-images.githubusercontent.com/102181381/185231737-1ba31713-13f0-48a3-b352-5c2bef06285c.svg" />
               <h1><button className="w-[10px] h-[10px] bg-color-2 rounded-full mr-2"></button>Javascript</h1>
@@ -44,6 +45,7 @@ export default function Technologies() {
         </div>
         <div id="back" className="flex justify-center py-5">
           <div className="flex flex-col gap-5">
+            <h1 className='text-center font-Montserrat text-2xl font-extrabold text-white'>BackEnd</h1>
             <div className="flex justify-start items-center gap-2">
               <img alt="NestJS" className="max-[750px]:w-[30px] w-[60px]" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" />
               <h1><button className="w-[10px] h-[10px] bg-[#DF234F] rounded-full mr-2"></button>NestJS</h1>
@@ -86,6 +88,7 @@ export default function Technologies() {
         </div>
         <div id="others" className="flex justify-center py-5">
           <div className="flex flex-col gap-5">
+            <h1 className='text-center font-Montserrat text-2xl font-extrabold text-white'>Otras</h1>
             <div className="flex justify-start items-center gap-2">
               <img alt="git" className="max-[750px]:w-[30px] w-[60px]" src="https://user-images.githubusercontent.com/102181381/185237411-06551dea-cd5f-4dd5-9be4-994eeea573bc.svg" />
               <h1><button className="w-[10px] h-[10px] bg-[#F34F29] rounded-full mr-2"></button>Git</h1>
