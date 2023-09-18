@@ -51,7 +51,7 @@ export default function CardProjects({ project }) {
                 onMouseLeave={() => setHoveredTech(null)}
                 key={techIndex}
                 className="flex flex-col justify-center items-center relative ">
-                {hoveredTech === Technology && <Tooltip text={Technology.type.name} />}
+                {/* {hoveredTech === Technology && <Tooltip text={Technology.type.name} />} */}
                 {Technology}
               </div>
             ))}
