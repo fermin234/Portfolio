@@ -18,8 +18,6 @@ const Carousel = ({ images }) => {
     setCurrentImageIndex(index);
   };
 
-  console.log(pathname);
-
   return (
     <div className={`relative flex justify-center ${pathname.includes("proyectos") ? "" : "max-h-[532px]"} overflow-hidden`}>
       <button

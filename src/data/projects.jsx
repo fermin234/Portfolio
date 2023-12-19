@@ -8,32 +8,6 @@ import imagesCalorieCounter from '../assets/CalorieCounter'
 
 const projects = [
   {
-    title: "-Flash Cards-",
-    description:
-      <>
-        <p>
-          FlashCards es una aplicación móvil desarrollada con React Native y Expo que te permite organizar y estudiar de manera efectiva mediante tarjetas de aprendizaje. Crea tus propias categorías y tarjetas con información valiosa para facilitar tu proceso de aprendizaje
-        </p>
-        <br />
-
-        <p>
-          <strong>Características Principales:</strong><br />
-          <strong>Creación de Cuentas:</strong> Permite a los usuarios crear cuentas personalizadas para gestionar sus tarjetas.<br /><br />
-          <strong>Gestión de Categorías:</strong> Crea categorías según tus necesidades.<br /><br />
-          <strong>Tarjetas Personalizadas:</strong> Diseña tarjetas con contenido frontal y posterior para estudiar de manera efectiva.<br /><br />
-          <strong>Cambio de Contraseña:</strong> Ofrece la funcionalidad de cambiar la contraseña del usuario para una mayor seguridad.<br /><br />
-        </p>
-        <br />
-      </>
-    ,
-    technologies: [<React />, <ReactNative />, <Expo />, <Firebase />, <Git />, <GitHub />],
-    aplication: "https://www.youtube.com/watch?v=UaXtypfygAQ&ab_channel=FerminSolaberrieta",
-    code: "https://github.com/fermin234/Flash-Cards",
-    images: imagesFlashCards,
-    responsive: 5,
-    featured: true
-  },
-  {
     title: "-TJ Inmobiliaria-",
     description:
       <>
@@ -76,6 +50,32 @@ const projects = [
     aplication: "https://www.martineznessicampos.com/",
     code: "https://github.com/GroupFiveDev/Martinez-Inmobiliaria-SRL",
     images: imagesInmobiliariaMartinez,
+    responsive: 5,
+    featured: true
+  },
+  {
+    title: "-Flash Cards-",
+    description:
+      <>
+        <p>
+          FlashCards es una aplicación móvil desarrollada con React Native y Expo que te permite organizar y estudiar de manera efectiva mediante tarjetas de aprendizaje. Crea tus propias categorías y tarjetas con información valiosa para facilitar tu proceso de aprendizaje
+        </p>
+        <br />
+
+        <p>
+          <strong>Características Principales:</strong><br />
+          <strong>Creación de Cuentas:</strong> Permite a los usuarios crear cuentas personalizadas para gestionar sus tarjetas.<br /><br />
+          <strong>Gestión de Categorías:</strong> Crea categorías según tus necesidades.<br /><br />
+          <strong>Tarjetas Personalizadas:</strong> Diseña tarjetas con contenido frontal y posterior para estudiar de manera efectiva.<br /><br />
+          <strong>Cambio de Contraseña:</strong> Ofrece la funcionalidad de cambiar la contraseña del usuario para una mayor seguridad.<br /><br />
+        </p>
+        <br />
+      </>
+    ,
+    technologies: [<React />, <ReactNative />, <Expo />, <Firebase />, <Git />, <GitHub />],
+    aplication: "https://www.youtube.com/watch?v=UaXtypfygAQ&ab_channel=FerminSolaberrieta",
+    code: "https://github.com/fermin234/Flash-Cards",
+    images: imagesFlashCards,
     responsive: 5,
     featured: true
   },
