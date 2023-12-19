@@ -31,8 +31,8 @@ export default function CardProjects({ project }) {
         {seeMore ? "Ver menos" : "Ver mas"}
       </button>
 
-      <div className={`${seeMore ? "w-full" : "w-[40%]"} ${seeMore ? "" : "min-[1526px]:absolute"} max-[1526px]:w-full min-[1526px]:bottom-0`}>
-        <div className="max-[1526px]:flex hidden">
+      <div className={`${seeMore ? "w-full" : "w-[40%]"} ${seeMore ? "" : "min-[1526px]:absolute"}  max-[1526px]:w-full min-[1526px]:bottom-0`}>
+        <div className="max-[1526px]:flex hidden justify-center">
           <Carousel images={images} />
         </div>
 

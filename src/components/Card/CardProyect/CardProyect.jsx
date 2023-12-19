@@ -26,7 +26,7 @@ export default function OtherCard({ project }) {
         <AiOutlineStar className={`${!featured && "hidden"} absolute left-2 top-2 w-6 h-6 text-color-2`} />
 
         <div>
-          <img src={images[0]} alt="imagenPrincipal" className="hover:opacity-40 hover:cursor-pointer z-30 hover:z-10 float-left w-[50%] h-auto hidden min-[933px]:flex" onClick={openModal} />
+          <img src={images[0]} alt="imagenPrincipal" className="w-[350px] h-[350px] object-contain hover:opacity-40 hover:cursor-pointer z-30 hover:z-10 float-left hidden min-[933px]:flex" onClick={openModal} />
 
           <div className={`${seeMore && "line-clamp-none"} line-clamp-[9] max-[932px]:text-center pl-2`}>
             {description}

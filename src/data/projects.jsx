@@ -1,10 +1,37 @@
-import { Javascript, React, CSS, Express, Git, HTML, Nodejs, PostgreSQL, Redux, Sequelize, Typescript, Chartjs, Tailwind, Nextjs13, MailJS, GitHub, NodeMailer, Trello, Chakra } from "../components/Technologies/IconTechnologies";
+import { Javascript, React, CSS, Express, Git, HTML, Nodejs, PostgreSQL, Redux, Sequelize, Expo, Chartjs, Tailwind, Nextjs13, MailJS, GitHub, NodeMailer, Trello, Chakra, ReactNative, Firebase } from "../components/Technologies/IconTechnologies";
 import imagesGameInformer from '../assets/GameInformer'
 import imagesCoachingEmpleo from '../assets/CoachingEmpleo'
 import imagesEasyLeadrning from '../assets/EasyLeadrning'
 import imagesInmobiliariaMartinez from '../assets/InmobiliariaMartinez'
+import imagesFlashCards from '../assets/FlashCards'
 
 const projects = [
+  {
+    title: "-Flash Cards-",
+    description:
+      <>
+        <p>
+          FlashCards es una aplicación móvil desarrollada con React Native y Expo que te permite organizar y estudiar de manera efectiva mediante tarjetas de aprendizaje. Crea tus propias categorías y tarjetas con información valiosa para facilitar tu proceso de aprendizaje
+        </p>
+        <br />
+
+        <p>
+          <strong>Características Principales:</strong><br />
+          <strong>Creación de Cuentas:</strong> Permite a los usuarios crear cuentas personalizadas para gestionar sus tarjetas.<br /><br />
+          <strong>Gestión de Categorías:</strong> Crea categorías según tus necesidades.<br /><br />
+          <strong>Tarjetas Personalizadas:</strong> Diseña tarjetas con contenido frontal y posterior para estudiar de manera efectiva.<br /><br />
+          <strong>Cambio de Contraseña:</strong> Ofrece la funcionalidad de cambiar la contraseña del usuario para una mayor seguridad.<br /><br />
+        </p>
+        <br />
+      </>
+    ,
+    technologies: [<React />, <ReactNative />, <Expo />, <Firebase />, <Git />, <GitHub />],
+    aplication: "https://www.youtube.com/watch?v=UaXtypfygAQ&ab_channel=FerminSolaberrieta",
+    code: "https://github.com/fermin234/Flash-Cards",
+    images: imagesFlashCards,
+    responsive: 5,
+    featured: true
+  },
   {
     title: "-TJ Inmobiliaria-",
     description:

@@ -10,10 +10,8 @@ export default function ImageModal({ children, isOpen, closeModal }) {
 
   return (
     <div className={`${isOpen ? "fixed" : "hidden"} w-full h-screen flex justify-center items-center top-0 left-0 bg-[#000000cc] z-[100]`} onClick={closeModal}>
-      <div className="relative max-w-[90%]   justify-center items-center flex" onClick={handleCloseModal}>
-        {/* <button onClick={() => closeModal()} className="absolute top-0 right-16 text-5xl z-[100]"> x </button> */}
+      <div className="relative max-w-[90%] justify-center items-center flex" onClick={handleCloseModal}>
         <button onClick={() => closeModal()} className="absolute top-0 right-0 text-5xl z-[100] bg-white p-3 font-Montserrat hover:opacity-100 opacity-25"> x </button>
-
         {children}
       </div>
     </div>

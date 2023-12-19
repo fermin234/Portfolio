@@ -18,6 +18,10 @@ export default function Technologies() {
               <h1><button className="w-[10px] h-[10px] bg-[#61DAFB] rounded-full mr-2"></button>React</h1>
             </div>
             <div className="flex justify-start items-center gap-2">
+              <img alt="ReactNative" className="max-[750px]:w-[30px] w-[60px]" src="https://user-images.githubusercontent.com/102181381/185236678-4d3a20e6-4ac7-4e61-a2bd-66c98f576ecf.svg" />
+              <h1><button className="w-[10px] h-[10px] bg-[#61DAFB] rounded-full mr-2"></button>React Native</h1>
+            </div>
+            <div className="flex justify-start items-center gap-2">
               <img alt="redux" className="max-[750px]:w-[30px] w-[60px]" src="https://user-images.githubusercontent.com/102181381/185237182-d52b1291-83ba-4b5f-a3ef-e0a26277f8ff.svg" />
               <h1><button className="w-[10px] h-[10px] bg-[#764ABC] rounded-full mr-2"></button>Redux</h1>
             </div>
