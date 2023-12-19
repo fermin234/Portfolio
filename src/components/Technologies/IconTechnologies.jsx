@@ -1,6 +1,7 @@
 import mailJS from '../../assets/Icons/mailJS.webp'
 import nodeMailer from '../../assets/Icons/nodemailer.webp'
 import chakra from '../../assets/Icons/chakra.webp'
+import { useState } from 'react';
 
 export function Javascript() {
   const [hoveredTech, setHoveredTech] = useState(null);
