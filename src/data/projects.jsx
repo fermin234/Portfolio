@@ -1,9 +1,10 @@
-import { Javascript, React, CSS, Express, Git, HTML, Nodejs, PostgreSQL, Redux, Sequelize, Expo, Chartjs, Tailwind, Nextjs13, MailJS, GitHub, NodeMailer, Trello, Chakra, ReactNative, Firebase } from "../components/Technologies/IconTechnologies";
+import { Javascript, React, CSS, Express, Git, HTML, Nodejs, PostgreSQL, Redux, Sequelize, Expo, Chartjs, Tailwind, Nextjs13, MailJS, GitHub, NodeMailer, Trello, Chakra, ReactNative, Firebase, Typescript } from "../components/Technologies/IconTechnologies";
 import imagesGameInformer from '../assets/GameInformer'
 import imagesCoachingEmpleo from '../assets/CoachingEmpleo'
 import imagesEasyLeadrning from '../assets/EasyLeadrning'
 import imagesInmobiliariaMartinez from '../assets/InmobiliariaMartinez'
 import imagesFlashCards from '../assets/FlashCards'
+import imagesCalorieCounter from '../assets/CalorieCounter'
 
 const projects = [
   {
@@ -148,6 +149,30 @@ const projects = [
     images: imagesCoachingEmpleo,
     responsive: 5,
     featured: true
+  },
+  {
+    title: "-Calorie Counter-",
+    description:
+      <>
+        <p>
+          Aplicación móvil desarrollada con React Native que te permite llevar un seguimiento de las calorías que consumes diariamente.
+        </p>
+        <br />
+
+        <p>
+          <strong>Características Principales:</strong><br />
+          <strong>Seguimiento de Calorías:</strong>  Registra y visualiza las calorías consumidas en diferentes días.<br /><br />
+          <strong>Gestión de Alimentos:</strong> Agrega, edita o elimina alimentos de tu registro calórico.<br /><br />
+        </p>
+        <br />
+      </>
+    ,
+    technologies: [<React />, <ReactNative />, <Typescript />, <Git />, <GitHub />],
+    aplication: "https://github.com/fermin234/CalorieCounter",
+    code: "https://github.com/fermin234/CalorieCounter",
+    images: imagesCalorieCounter,
+    responsive: 5,
+    featured: false
   },
   {
     title: "-EasyLearning-",

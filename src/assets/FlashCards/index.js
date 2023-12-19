@@ -11,6 +11,6 @@ import j from "./9.jpeg";
 import k from "./10.jpeg";
 import l from "./12.jpeg";
 
-const imagesGameInformer = [a, b, c, d, e, f, g, h, i, j, k, l];
+const imagesFlashCards = [a, b, c, d, e, f, g, h, i, j, k, l];
 
-export default imagesGameInformer;
+export default imagesFlashCards;
