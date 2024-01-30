@@ -8,7 +8,7 @@ export default function Educacion() {
           <h1 className="text-xl font-semibold text-center">[Academia - Henry] Bootcamp | Developer FullStack</h1>
           <p className="overflow-hidden text-ellipsis">05/2022 - 01/2023</p>
           <a href="https://www.soyhenry.com/webfullstack" target="_blank" className="hover:opacity-50">
-            <img src="https://www.soyhenry.com/_next/image?url=https%3A%2F%2Fassets.soyhenry.com%2Fhenry-landing%2Fassets%2FHenry%2Flogo-white.png&w=128&q=75" alt="henry_logo" />
+            <img src="https://www.soyhenry.com/_next/static/media/HenryLogo.bb57fd6f.svg" alt="henry_logo" />
           </a>
           <p className="overflow-hidden text-ellipsis text-center">Programa de más de 800 horas de estudio/practica con una metodología de trabajo pair programming y scrum abarcamos tecnologías de Front-End: React, Redux, Axios. Y de Back-End: Node, Sequelize, PostgreSQL.</p>
         </div>
@@ -17,7 +17,7 @@ export default function Educacion() {
           <h1 className="text-xl font-semibold text-center">[Academia - Henry] Teaching Assistant</h1>
           <p className="overflow-hidden text-ellipsis">08/2022 - 10/2022</p>
           <a href="https://www.soyhenry.com/" target="_blank" className="hover:opacity-50">
-            <img src="https://www.soyhenry.com/_next/image?url=https%3A%2F%2Fassets.soyhenry.com%2Fhenry-landing%2Fassets%2FHenry%2Flogo-white.png&w=128&q=75" alt="henry_logo2" />
+            <img src="https://www.soyhenry.com/_next/static/media/HenryLogo.bb57fd6f.svg" alt="henry_logo2" />
           </a>
           <p className="overflow-hidden text-ellipsis text-center">Coordinar un grupo de estudiantes para lograr
             una correcta integración al grupo de estudio.
