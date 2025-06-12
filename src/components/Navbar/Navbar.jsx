@@ -9,12 +9,14 @@ import { BsFiletypePdf } from 'react-icons/bs';
 import { AiFillLinkedin } from 'react-icons/ai';
 import { ImWhatsapp } from 'react-icons/im';
 import { IoIosArrowDown } from 'react-icons/io';
+import './Navbar.css';
 
 export default function Navbar({ status, setStatus }) {
   const { pathname } = useLocation()
   const history = useHistory()
   const [drawer, setDrawer] = useState(false)
   const [color, setColor] = useState(false)
+  const [activeSection, setActiveSection] = useState('inicio')
 
   const changeNav = () => {
     setDrawer(false)
@@ -23,6 +25,45 @@ export default function Navbar({ status, setStatus }) {
     } else {
       setColor(false);
     }
+  };
+
+  const updateActiveSection = () => {
+    const sections = ['inicio', 'about', 'educacion', 'technologies', 'projects', 'contact'];
+    const scrollPos = window.scrollY;
+    const windowHeight = window.innerHeight;
+    
+    if (scrollPos + windowHeight >= document.documentElement.scrollHeight - 50) {
+      setActiveSection('contact');
+      return;
+    }
+
+    let currentSection = 'inicio';
+    let maxVisibleArea = 0;
+
+    sections.forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionBottom = rect.bottom;
+        const sectionHeight = rect.height;
+
+        let visibleTop = Math.max(0, -sectionTop);
+        let visibleBottom = Math.min(sectionHeight, windowHeight - sectionTop);
+        let visibleArea = Math.max(0, visibleBottom - visibleTop);
+
+        if (sectionTop <= windowHeight * 0.5 && sectionBottom >= windowHeight * 0.5) {
+          visibleArea += sectionHeight * 0.3; 
+        }
+
+        if (visibleArea > maxVisibleArea) {
+          maxVisibleArea = visibleArea;
+          currentSection = sectionId;
+        }
+      }
+    });
+
+    setActiveSection(currentSection);
   };
 
   function handleClick(e) {
@@ -50,16 +91,29 @@ export default function Navbar({ status, setStatus }) {
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", changeNav);
-  }, []);
+    const handleScroll = () => {
+      changeNav();
+      if (pathname === '/') {
+        updateActiveSection();
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    
+    if (pathname === '/') {
+      updateActiveSection();
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pathname]);
 
   return (
     <nav className={`fixed w-full flex flex-col items-center font-Montserrat z-[100]`}>
 
-      {/* Pc */}
       <div className={`${color ? "bg-[#120f07] h-[4vh]" : "gradient h-[8vh]"} relative max-[620px]:bg-[#120f07] w-full flex items-center transition-all duration-1000`}>
         <div className='absolute left-3 top-0 h-full flex items-center gap-2'>
-          {/* cv */}
           <a
             rel="noreferrer"
             target="_blank"
@@ -69,7 +123,6 @@ export default function Navbar({ status, setStatus }) {
             className='w-full h-auto'>
             <BsFiletypePdf color='white' className='hover:cursor-pointer hover:opacity-25' />
           </a>
-          {/* linkedin */}
           <a
             rel="noreferrer"
             href="https://www.linkedin.com/in/fermin-solaberrieta/"
@@ -77,25 +130,24 @@ export default function Navbar({ status, setStatus }) {
             className='w-full h-auto'>
             <AiFillLinkedin color='white' className='hover:cursor-pointer hover:opacity-25' />
           </a>
-          {/* wsp */}
           <a rel="noreferrer" href="https://wa.me/2473400240?text=Hola%20Fermín, %20estuve%20mirando%20tu%20perfil%20junto%20con%20tus%20proyectos%20y%20me%20interesaría%20ponerme%20en%20contacto%20con%20usted.%20¡Muchas%20gracias!" target="_blank" className='w-full h-auto' >
             <ImWhatsapp color='white' className=' hover:cursor-pointer hover:opacity-25' />
           </a>
         </div>
         <div className="flex justify-center items-center gap-5 max-[760px]:hidden w-full text-white">
-          <RouterLink to="/" className={`${pathname !== "/" ? "" : "hidden"} hover:cursor-pointer`}>
+          <RouterLink to="/" className={`${pathname !== "/" ? "" : "hidden"} navbar-item hover:cursor-pointer ${activeSection === 'inicio' ? 'active' : ''}`}>
             Inicio
           </RouterLink>
-          <Link to="about" smooth="true" duration={1000} className='hover:cursor-pointer hover:opacity-25' onClick={() => handleClick("about")}>
+          <Link to="about" smooth="true" duration={1000} className={`navbar-item hover:cursor-pointer ${activeSection === 'about' ? 'active' : ''}`} onClick={() => handleClick("about")}>
             Sobre mí
           </Link>
-          <Link to="educacion" smooth="true" duration={1000} className='hover:cursor-pointer hover:opacity-25' onClick={() => handleClick("educacion")}>
+          <Link to="educacion" smooth="true" duration={1000} className={`navbar-item hover:cursor-pointer ${activeSection === 'educacion' ? 'active' : ''}`} onClick={() => handleClick("educacion")}>
             Educación
           </Link>
-          <Link to="technologies" smooth="true" duration={1000} className='hover:cursor-pointer hover:opacity-25' onClick={() => handleClick("technologies")}>
+          <Link to="technologies" smooth="true" duration={1000} className={`navbar-item hover:cursor-pointer ${activeSection === 'technologies' ? 'active' : ''}`} onClick={() => handleClick("technologies")}>
             Mís Tecnologías
           </Link>
-          <div className={`hover:cursor-pointer w-fit ${status ? "hover:opacity-100" : "hover:opacity-25"}`} onClick={() => setStatus(!status)}>
+          <div className={`navbar-item hover:cursor-pointer w-fit ${activeSection === 'projects' ? 'active' : ''} ${status ? "hover:opacity-100" : ""}`} onClick={() => setStatus(!status)}>
             <p className='flex justify-center items-center gap-1'>
               Mis Proyectos
               <IoIosArrowDown />
@@ -112,7 +164,7 @@ export default function Navbar({ status, setStatus }) {
 
 
 
-          <Link to="contact" smooth="true" duration={1000} className='hover:cursor-pointer hover:opacity-25' onClick={() => handleClick("contact")}>
+          <Link to="contact" smooth="true" duration={1000} className={`navbar-item hover:cursor-pointer ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => handleClick("contact")}>
             Contacto
           </Link>
         </div>
@@ -125,7 +177,6 @@ export default function Navbar({ status, setStatus }) {
 
       </div>
 
-      {/* Cell phone */}
       <div onClick={() => setDrawer(false)} className={`${drawer ? "" : "hidden"} w-full h-screen`}>
         <div className={`flex flex-col items-center gap-2 py-2 bg-black text-white`}>
           <a href="/" className={`${pathname !== "/" ? "" : "hidden"} w-full text-center py-1`}>Inicio</a>

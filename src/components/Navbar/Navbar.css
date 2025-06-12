@@ -1,0 +1,32 @@
+.navbar-item {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-item::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ecd85d; 
+  transition: width 0.4s ease-out;
+}
+
+.navbar-item:hover::after {
+  width: 100%;
+}
+
+.navbar-item:hover {
+  opacity: 1;
+}
+
+.navbar-item.active {
+  color: #ecd85d; 
+}
+
+.navbar-item.active::after {
+  width: 100%;
+  background-color: #ecd85d;
+} 
