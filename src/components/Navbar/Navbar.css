@@ -26,6 +26,14 @@
   color: #ecd85d; 
 }
 
+.navbar-item.active > p {
+  color: #ecd85d; 
+}
+
+.navbar-item.active div {
+  color: white;
+}
+
 .navbar-item.active::after {
   width: 100%;
   background-color: #ecd85d;
