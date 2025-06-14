@@ -90,6 +90,21 @@ export default function Navbar({ status, setStatus }) {
     setStatus(!status)
   }
 
+  // Helper function to determine if projects section should be active
+  const isProjectsActive = () => {
+    return activeSection === 'projects' || pathname === '/proyectos';
+  };
+
+  // Helper function to determine if "Proyectos destacados" should be active
+  const isProyectosDestacadosActive = () => {
+    return activeSection === 'projects' && pathname === '/';
+  };
+
+  // Helper function to determine if "Todos los proyectos" should be active
+  const isTodosProyectosActive = () => {
+    return pathname === '/proyectos';
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       changeNav();
@@ -102,6 +117,9 @@ export default function Navbar({ status, setStatus }) {
     
     if (pathname === '/') {
       updateActiveSection();
+    } else {
+      // Reset activeSection when not on home page
+      setActiveSection('');
     }
 
     return () => {
@@ -147,23 +165,25 @@ export default function Navbar({ status, setStatus }) {
           <Link to="technologies" smooth="true" duration={1000} className={`navbar-item hover:cursor-pointer ${activeSection === 'technologies' ? 'active' : ''}`} onClick={() => handleClick("technologies")}>
             Mís Tecnologías
           </Link>
-          <div className={`navbar-item hover:cursor-pointer w-fit ${activeSection === 'projects' ? 'active' : ''} ${status ? "hover:opacity-100" : ""}`} onClick={() => setStatus(!status)}>
+          <div 
+            className={`navbar-item hover:cursor-pointer w-fit ${isProjectsActive() ? 'active' : ''} ${status ? "hover:opacity-100" : ""}`} 
+            onClick={() => setStatus(!status)}
+            onMouseEnter={() => setStatus(true)}
+            onMouseLeave={() => setStatus(false)}
+          >
             <p className='flex justify-center items-center gap-1'>
               Mis Proyectos
               <IoIosArrowDown />
             </p>
-            <div className={`${status ? "absolute" : "hidden"} bg-black flex flex-col mt-2 items-center justify-center text-center gap-2 py-2 w-[132px]`} >
-              <Link to="projects" smooth="true" duration={1000} className='hover:cursor-pointer hover:opacity-25' onClick={() => handleClickProyect("projects")}>
+            <div className={`${status ? "absolute" : "hidden"} bg-black flex flex-col top-full items-center justify-center text-center gap-2 py-2 w-[132px]`} >
+              <Link to="projects" smooth="true" duration={1000} className={`hover:cursor-pointer hover:opacity-25 ${isProyectosDestacadosActive() ? 'text-yellow-400' : ''}`} onClick={() => handleClickProyect("projects")}>
                 Proyectos <br /> Destacados
               </Link>
-              <RouterLink to="proyectos" smooth="true" duration={1000} className='hover:cursor-pointer hover:opacity-25' onClick={() => handleClickProyect("proyectos")}>
+              <RouterLink to="proyectos" smooth="true" duration={1000} className={`hover:cursor-pointer hover:opacity-25 ${isTodosProyectosActive() ? 'text-yellow-400' : ''}`} onClick={() => handleClickProyect("proyectos")}>
                 Todos los <br /> proyectos
               </RouterLink>
             </div>
           </div>
-
-
-
           <Link to="contact" smooth="true" duration={1000} className={`navbar-item hover:cursor-pointer ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => handleClick("contact")}>
             Contacto
           </Link>
