@@ -1,11 +1,24 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
-    extend: {},
-    fontFamily: {
-      Montserrat: "Montserrat",
+    extend: {
+      colors: {
+        'color-1': '#181607',
+        'color-2': '#ecd85d',
+        'color-3': '#ecd85d',
+        'color-4': '#181607',
+        'color-5': '#181607',
+        'color-6': '#181607',
+      },
+      fontFamily: {
+        'Montserrat': ['Montserrat', 'sans-serif']
+      }
     },
   },
-  plugins: [],
-};
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
+}
