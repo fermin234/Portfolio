@@ -49,6 +49,11 @@
   color: #f3eae8;
 }
 
+#projects {
+  background-color: #807970 !important;
+  min-height: 100vh;
+}
+
 .show {
   opacity: 1;
   transition: opacity 0.5s ease-in;
