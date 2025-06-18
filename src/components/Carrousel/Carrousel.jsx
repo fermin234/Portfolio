@@ -1,65 +1,105 @@
-import React, { useState } from "react";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Carousel = ({ images }) => {
   const { pathname } = useHistory().location;
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
-  const previousImage = () => {
-    setCurrentImageIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+  const handleNext = () => {
+    setDirection(1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex + 1 === images.length ? 0 : prevIndex + 1
     );
   };
 
-  const selectImage = (index) => {
-    setCurrentImageIndex(index);
+  const handlePrevious = () => {
+    setDirection(-1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    })
   };
 
   return (
     <div
-      className={`relative flex justify-center ${
+      className={`relative w-full h-[300px] overflow-hidden rounded-lg bg-[#333] ${
         pathname.includes("projects") ? "" : "max-h-[532px]"
-      } overflow-hidden`}
+      }`}
     >
-      <button
-        onClick={previousImage}
-        className="bg-black text-color-2 hover:bg-[#ecd85d] hover:text-black w-[50px] max-[900px]:absolute max-[900px]:left-0 max-[900px]:h-full max-[900px]:w-[50%] max-[900px]:opacity-0"
-      >
-        <AiOutlineArrowLeft className="w-full h-full" />
-      </button>
-
-      <figcaption>
-        <img
-          src={images[currentImageIndex]}
-          alt="imagenProject"
-          className={`${
-            pathname === "/projects"
-              ? "h-[800px]"
-              : "h-[495px] w-fit object-contain"
-          }`}
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          custom={direction}
+          variants={slideVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{
+            x: { type: "spring", stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 }
+          }}
+          className="absolute w-full h-full object-contain"
+          alt={`Slide ${currentIndex}`}
         />
-      </figcaption>
+      </AnimatePresence>
 
-      <button
-        onClick={nextImage}
-        className="bg-black text-color-2 hover:bg-[#ecd85d] hover:text-black w-[50px] max-[900px]:absolute max-[900px]:right-0 max-[900px]:h-full max-[900px]:opacity-0 max-[900px]:w-[50%] "
-      >
-        <AiOutlineArrowRight className="w-full h-full" />
-      </button>
+      <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none z-10">
+        <motion.button
+          className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/50 text-white transform transition-transform hover:scale-110"
+          onClick={handlePrevious}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <IoIosArrowBack size={24} />
+        </motion.button>
 
-      <div className="absolute bottom-2 left-0 right-0 flex justify-center">
+        <motion.button
+          className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/50 text-white transform transition-transform hover:scale-110"
+          onClick={handleNext}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <IoIosArrowForward size={24} />
+        </motion.button>
+      </div>
+
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
         {images.map((_, index) => (
-          <div
+          <motion.button
             key={index}
-            onClick={() => selectImage(index)}
-            className={`w-2 h-2 mx-1 rounded-full hover:cursor-pointer ${
-              index === currentImageIndex ? "bg-black" : "bg-gray-400"
+            className={`w-2 h-2 rounded-full ${
+              currentIndex === index ? "bg-white" : "bg-white/50"
             }`}
+            onClick={() => setCurrentIndex(index)}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.8 }}
           />
         ))}
       </div>
