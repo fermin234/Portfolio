@@ -11,7 +11,6 @@ export default function OtherCard({ project }) {
 
   const [seeMore, setSeeMore] = useState(false)
   const [hoveredTech, setHoveredTech] = useState(null);
-  const [savedScrollPosition, setSavedScrollPosition] = useState(0);
   const [textOverflows, setTextOverflows] = useState(false);
   const textRef = useRef(null);
   const containerRef = useRef(null);
@@ -24,24 +23,13 @@ export default function OtherCard({ project }) {
   }, [description]);
 
   const handleSeeMoreToggle = () => {
-    if (!seeMore) {
-      setSavedScrollPosition(window.scrollY);
-      setSeeMore(true);
-    } else {
-      setSeeMore(false);
-      setTimeout(() => {
-        window.scrollTo({
-          top: savedScrollPosition,
-          behavior: 'smooth'
-        });
-      }, 100);
-    }
+    setSeeMore(!seeMore);
   };
 
   return (
     <>
       <ImageModal isOpen={isOpen} openModal={openModal} closeModal={closeModal}>
-        <Carrousel images={images} />
+        <Carrousel images={images} isInModal={true} />
       </ImageModal>
       <div className='border-2 font-Montserrat flex flex-col px-2 py-5 gap-2 relative border-[#253447] bg-[#0e141b] rounded-lg'>
 
