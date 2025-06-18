@@ -2,72 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-.gradient {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.2945553221288515) 75%,
-    rgba(0, 0, 0, 0.165703781512605) 85%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
+@layer components {
+  .prose {
+    @apply text-white;
+    max-width: 100%;
+    line-height: 1.75;
+  }
+  
+  .prose strong {
+    @apply text-[#ecd85d] font-bold;
+    display: inline-block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .prose p {
+    @apply mb-4;
+    display: block;
+    line-height: 1.75;
+    margin-top: 0;
+  }
 
-.bg-color-1 {
-  background-color: #b0dc4d;
-}
-.bg-color-2 {
-  background-color: #ecd85d;
-}
-.bg-color-3 {
-  background-color: #181607;
-}
-.bg-color-4 {
-  background-color: #807970;
-}
-.bg-color-5 {
-  background-color: #f3eae8;
-}
-.bg-color-6 {
-  background-color: #555049;
-}
+  .prose br {
+    display: block;
+    content: "";
+    margin-top: 0.5rem;
+  }
 
-.text-color-1 {
-  color: #b0dc4d;
-}
-.text-color-2 {
-  color: #ecd85d;
-}
-.text-color-3 {
-  color: #181607;
-}
-.text-color-4 {
-  color: #807970;
-}
-.text-color-5 {
-  color: #f3eae8;
+  .prose ul {
+    @apply text-white list-none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .prose li {
+    @apply text-white;
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    display: block;
+    line-height: 1.6;
+  }
+
+  .prose li::before {
+    content: "•";
+    position: absolute;
+    left: 0.25rem;
+    top: 0;
+    color: #ecd85d;
+    font-weight: bold;
+  }
 }
 
 #projects {
-  background-color: #807970 !important;
+  background-color: #253447 !important;
   min-height: 100vh;
-}
-
-.show {
-  opacity: 1;
-  transition: opacity 0.5s ease-in;
-}
-
-.hide {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-}
-
-.text-image-container {
-  column-count: 2; /* Establece el número de columnas, puedes ajustarlo según tus necesidades */
-}
-
-.text-image-container img {
-  width: 100%; /* Establece el ancho de la imagen para que el texto se envuelva correctamente */
 }
