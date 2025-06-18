@@ -2,13 +2,13 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="bg-color-4 w-full min-h-screen py-[4vh] flex flex-col justify-center items-center font-Montserrat"
+      className="bg-[#253447] w-full min-h-screen py-[4vh] flex flex-col justify-center items-center font-Montserrat"
     >
-      <h1 className="mb-5 text-[40px] max-[715px]:text-[28px] font-bold text-color-3">
+      <h1 className="mb-5 text-[40px] max-[715px]:text-[28px] font-bold text-white">
         EXPERIENCIA LABORAL
       </h1>
       <div className="flex gap-10 max-[1260px]:flex-col px-5">
-        <div className="border-2 border-[#ecd85d] flex flex-col max-w-[600px] items-center p-5 gap-5 text-lg bg-[#6b6661]">
+        <div className="border-2 border-[#ecd85d] flex flex-col max-w-[600px] items-center p-5 gap-5 text-lg bg-[#304054] rounded-lg shadow-lg">
           <h1 className="text-xl font-semibold text-center text-white">
             Full Stack Developer
           </h1>
@@ -58,7 +58,7 @@ export default function Experience() {
           </div>
         </div>
 
-        <div className="border-2 border-[#ecd85d] flex flex-col max-w-[600px] items-center p-5 gap-5 text-lg bg-[#6b6661]">
+        <div className="border-2 border-[#ecd85d] flex flex-col max-w-[600px] items-center p-5 gap-5 text-lg bg-[#304054] rounded-lg shadow-lg">
           <h1 className="text-xl font-semibold text-center text-white">
             Freelancer
           </h1>
