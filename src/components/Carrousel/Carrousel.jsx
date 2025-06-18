@@ -15,14 +15,16 @@ const Carousel = ({ images, isInModal }) => {
     return () => clearInterval(interval);
   }, [currentIndex]);
 
-  const handleNext = () => {
+  const handleNext = (e) => {
+    if (e) e.stopPropagation();
     setDirection(1);
     setCurrentIndex((prevIndex) =>
       prevIndex + 1 === images.length ? 0 : prevIndex + 1
     );
   };
 
-  const handlePrevious = () => {
+  const handlePrevious = (e) => {
+    if (e) e.stopPropagation();
     setDirection(-1);
     setCurrentIndex((prevIndex) =>
       prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
@@ -79,7 +81,7 @@ const Carousel = ({ images, isInModal }) => {
       <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none z-10">
         <motion.button
           className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/50 text-white transform transition-transform hover:scale-110"
-          onClick={handlePrevious}
+          onClick={(e) => handlePrevious(e)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
@@ -88,7 +90,7 @@ const Carousel = ({ images, isInModal }) => {
 
         <motion.button
           className="pointer-events-auto flex items-center justify-center w-10 h-10 rounded-full bg-black/50 text-white transform transition-transform hover:scale-110"
-          onClick={handleNext}
+          onClick={(e) => handleNext(e)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
@@ -103,7 +105,10 @@ const Carousel = ({ images, isInModal }) => {
             className={`w-2 h-2 rounded-full ${
               currentIndex === index ? "bg-white" : "bg-white/50"
             }`}
-            onClick={() => setCurrentIndex(index)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentIndex(index);
+            }}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}
           />
