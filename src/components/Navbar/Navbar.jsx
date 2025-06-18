@@ -269,7 +269,7 @@ export default function Navbar({ status, setStatus }) {
                 smooth="true"
                 duration={1000}
                 className={`hover:cursor-pointer hover:opacity-25 ${
-                  isFeaturedProjectsActive() ? "text-yellow-400" : ""
+                  isFeaturedProjectsActive() ? "text-[#ecd85d]" : ""
                 }`}
                 onClick={() => handleClickProject("projects")}
               >
@@ -280,7 +280,7 @@ export default function Navbar({ status, setStatus }) {
                 smooth="true"
                 duration={1000}
                 className={`hover:cursor-pointer hover:opacity-25 ${
-                  isAllProjectsActive() ? "text-yellow-400" : ""
+                  isAllProjectsActive() ? "text-[#ecd85d]" : ""
                 }`}
                 onClick={() => handleClickProject("projects")}
               >
