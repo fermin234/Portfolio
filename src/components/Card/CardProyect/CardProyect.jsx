@@ -1,23 +1,30 @@
-import { useState, useRef, useEffect } from 'react'
-import useModal from '../../../hooks/useModal/useModal'
-import ImageModal from '../../Modal/ImageModal/ImageModal'
-import Carrousel from '../../Carrousel/Carrousel'
-import { AiOutlineStar } from 'react-icons/ai';
-import Tooltip from '../../Tooltip/Tooltip';
+import { useState, useRef, useEffect } from "react";
+import useModal from "../../../hooks/useModal/useModal";
+import ImageModal from "../../Modal/ImageModal/ImageModal";
+import Carrousel from "../../Carrousel/Carrousel";
+import { AiOutlineStar } from "react-icons/ai";
 
 export default function OtherCard({ project }) {
-  const { title, description, technologies, aplication, code, images, featured, } = project
-  const { isOpen, openModal, closeModal } = useModal()
+  const {
+    title,
+    description,
+    technologies,
+    aplication,
+    code,
+    images,
+    featured,
+  } = project;
+  const { isOpen, openModal, closeModal } = useModal();
 
-  const [seeMore, setSeeMore] = useState(false)
-  const [hoveredTech, setHoveredTech] = useState(null);
+  const [seeMore, setSeeMore] = useState(false);
   const [textOverflows, setTextOverflows] = useState(false);
   const textRef = useRef(null);
   const containerRef = useRef(null);
 
   useEffect(() => {
     if (textRef.current && containerRef.current) {
-      const isOverflowing = textRef.current.scrollHeight > containerRef.current.clientHeight;
+      const isOverflowing =
+        textRef.current.scrollHeight > containerRef.current.clientHeight;
       setTextOverflows(isOverflowing);
     }
   }, [description]);
@@ -31,17 +38,29 @@ export default function OtherCard({ project }) {
       <ImageModal isOpen={isOpen} openModal={openModal} closeModal={closeModal}>
         <Carrousel images={images} isInModal={true} />
       </ImageModal>
-      <div className='border-2 font-Montserrat flex flex-col px-2 py-5 gap-2 relative border-[#253447] bg-[#0e141b] rounded-lg'>
-
+      <div className="border-2 font-Montserrat flex flex-col px-2 py-5 gap-2 relative border-[#253447] bg-[#0e141b] rounded-lg">
         <h1 className="font-bold text-2xl text-[#ecd85d] text-center">
           {title}
         </h1>
-        <AiOutlineStar className={`${!featured && "hidden"} absolute left-2 top-2 w-6 h-6 text-[#ecd85d]`} />
+        <AiOutlineStar
+          className={`${
+            !featured && "hidden"
+          } absolute left-2 top-2 w-6 h-6 text-[#ecd85d]`}
+        />
 
         <div className="relative">
-          <img src={images[0]} alt="imagenPrincipal" className="w-[350px] h-[350px] object-contain hover:opacity-40 hover:cursor-pointer z-30 hover:z-10 float-left hidden min-[933px]:flex" onClick={openModal} />
+          <img
+            src={images[0]}
+            alt="imagenPrincipal"
+            className="w-[350px] h-[350px] object-contain hover:opacity-40 hover:cursor-pointer z-30 hover:z-10 float-left hidden min-[933px]:flex"
+            onClick={openModal}
+          />
 
-          <div ref={containerRef} className="overflow-hidden" style={{ maxHeight: seeMore ? 'none' : '400px' }}>
+          <div
+            ref={containerRef}
+            className="overflow-hidden"
+            style={{ maxHeight: seeMore ? "none" : "400px" }}
+          >
             <div ref={textRef} className="prose prose-lg text-white pl-2">
               {description}
             </div>
@@ -53,11 +72,14 @@ export default function OtherCard({ project }) {
 
           <div>
             {textOverflows && (
-              <button className="text-[#ecd85d] transition-colors duration-300 hover:opacity-50 font-extralight flex justify-start max-[932px]:w-full max-[932px]:justify-center pl-2 max-[932px]:pl-0" onClick={handleSeeMoreToggle}>
+              <button
+                className="text-[#ecd85d] transition-colors duration-300 hover:opacity-50 font-extralight flex justify-start max-[932px]:w-full max-[932px]:justify-center pl-2 max-[932px]:pl-0"
+                onClick={handleSeeMoreToggle}
+              >
                 {seeMore ? "Ver menos" : "Ver más..."}
               </button>
             )}
-            <div className='relative flex justify-center items-center min-[933px]:hidden'>
+            <div className="relative flex justify-center items-center min-[933px]:hidden">
               <img
                 src={images[0]}
                 alt="imagenPrincipal"
@@ -68,57 +90,20 @@ export default function OtherCard({ project }) {
                 Ver imágenes
               </h1>
             </div>
-            <div className='flex flex-col max-[1150px]:hidden gap-5'>
-              <div className='flex items-center justify-center gap-2'>
-                {technologies.map((Technology, techIndex) => (
-                  <div
-                    onMouseEnter={() => setHoveredTech(Technology)}
-                    onMouseLeave={() => setHoveredTech(null)}
-                    key={techIndex}
-                    className="flex flex-col justify-center items-center relative ">
-                    {hoveredTech === Technology && <Tooltip text={Technology.type.name} />}
-                    {Technology}
-                  </div>
-                ))}
-              </div>
-
-              <div className="font-Montserrat flex justify-center w-full items-center gap-10">
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  className="border-2 p-2 border-[#ecd85d] text-[#ecd85d] hover:bg-[#ecd85d] hover:text-[#0e141b] font-extrabold"
-                  href={aplication}
-                >
-                  Ver aplicación
-                </a>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  className="text-[#ecd85d] hover:text-[#ecd85d] font-extrabold"
-                  href={code}
-                >
-                  Ver código
-                </a>
-              </div>
-            </div>
           </div>
-
         </div>
 
-        <div className='flex flex-col min-[1151px]:hidden'>
-          <div className='flex items-center justify-center gap-2 mb-2'>
-            {technologies.map((Technology, techIndex) => (
-              <div
-                onMouseEnter={() => setHoveredTech(Technology)}
-                onMouseLeave={() => setHoveredTech(null)}
-                key={techIndex}
-                className="flex flex-col justify-center items-center relative ">
-                {hoveredTech === Technology && <Tooltip text={Technology.type.name} />}
+        <div className="flex flex-wrap justify-center gap-2 bg-[#1a2433] p-2 rounded-lg shadow-lg mt-4 z-20 relative">
+          {technologies.map((Technology, techIndex) => (
+            <div key={techIndex} className="relative">
+              <div className="p-2 bg-[#253447] rounded-lg transition-colors hover:bg-[#304054] shadow-md">
                 {Technology}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
 
+        <div className="flex flex-col max-[1150px]:hidden gap-5 mt-4">
           <div className="font-Montserrat flex justify-center w-full items-center gap-10">
             <a
               rel="noreferrer"
@@ -138,7 +123,28 @@ export default function OtherCard({ project }) {
             </a>
           </div>
         </div>
-      </div >
+
+        <div className="flex flex-col min-[1151px]:hidden">
+          <div className="font-Montserrat flex justify-center w-full items-center gap-10">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              className="border-2 p-2 border-[#ecd85d] text-[#ecd85d] hover:bg-[#ecd85d] hover:text-[#0e141b] font-extrabold"
+              href={aplication}
+            >
+              Ver aplicación
+            </a>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              className="text-[#ecd85d] hover:text-[#ecd85d] font-extrabold"
+              href={code}
+            >
+              Ver código
+            </a>
+          </div>
+        </div>
+      </div>
     </>
-  )
+  );
 }
