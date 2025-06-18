@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-const Carousel = ({ images }) => {
+const Carousel = ({ images, isInModal }) => {
   const { pathname } = useHistory().location;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -46,16 +46,17 @@ const Carousel = ({ images }) => {
     })
   };
 
-  return (
-    <div
-      className={`relative w-full h-[300px] overflow-hidden rounded-lg bg-[#333] ${
+  const containerClass = isInModal 
+    ? "relative w-full h-full overflow-hidden rounded-lg bg-[#333]"
+    : `relative w-full h-full overflow-hidden rounded-lg bg-[#333] ${
         pathname.includes("projects") ? "" : "max-h-[532px]"
-      }`}
-    >
+      }`;
+
+  return (
+    <div className={containerClass}>
       <AnimatePresence initial={false} custom={direction}>
-        <motion.img
+        <motion.div
           key={currentIndex}
-          src={images[currentIndex]}
           custom={direction}
           variants={slideVariants}
           initial="enter"
@@ -65,9 +66,14 @@ const Carousel = ({ images }) => {
             x: { type: "spring", stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 }
           }}
-          className="absolute w-full h-full object-contain"
-          alt={`Slide ${currentIndex}`}
-        />
+          className="absolute w-full h-full flex items-center justify-center"
+        >
+          <img
+            src={images[currentIndex]}
+            className={`${isInModal ? 'max-h-[80vh] max-w-full' : 'max-w-full max-h-full'} object-contain`}
+            alt={`Slide ${currentIndex}`}
+          />
+        </motion.div>
       </AnimatePresence>
 
       <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none z-10">
