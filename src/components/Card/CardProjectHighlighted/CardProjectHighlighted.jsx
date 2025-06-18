@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Carousel from "../../Carrousel/Carrousel";
 import rombo_fill from '../../../assets/Icons/rombo_fill.webp'
 import rombo_unfill from '../../../assets/Icons/rombo_unfill.webp'
-import Tooltip from '../../Tooltip/Tooltip'
 import useModal from '../../../hooks/useModal/useModal'
 import ImageModal from '../../Modal/ImageModal/ImageModal'
 
@@ -126,14 +125,10 @@ export default function CardProjects({ project }) {
                   <motion.div
                     key={techIndex}
                     className="relative"
-                    whileHover={{ scale: 1.1 }}
-                    onMouseEnter={() => setHoveredTech(Technology)}
-                    onMouseLeave={() => setHoveredTech(null)}
                   >
                     <div className="p-2 bg-[#253447] rounded-lg transition-colors hover:bg-[#304054] shadow-md">
                       {Technology}
                     </div>
-                    {hoveredTech === Technology && <Tooltip text={Technology.type?.name || ""} />}
                   </motion.div>
                 ))}
               </motion.div>
