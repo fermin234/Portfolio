@@ -4,7 +4,7 @@ import { BsFiletypePdf } from 'react-icons/bs';
 
 export default function Footer() {
   return (
-    <footer id="footer" className='w-full bg-[#333333] py-[4vh] flex flex-col items-center justify-center gap-5 font-Montserrat'>
+    <footer id="footer" className='w-full bg-[#0e141b] py-[4vh] flex flex-col items-center justify-center gap-5 font-Montserrat'>
       <div className='flex justify-center items-center gap-5'>
         <a
           rel="noreferrer"
@@ -33,7 +33,7 @@ export default function Footer() {
           <BsFiletypePdf color='white' className='w-7 h-7' />
         </a>
       </div>
-      <p className='text-center'>
+      <p className='text-center text-white'>
         {"© 2023 - Todos los derechos reservados por "}
         <a
           className='text-[#ecd85d]'
