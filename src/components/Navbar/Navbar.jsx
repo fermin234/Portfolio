@@ -146,7 +146,16 @@ export default function Navbar({ status, setStatus }) {
           color ? "bg-[#120f07] h-[4vh]" : "gradient h-[8vh]"
         } relative max-[620px]:bg-[#120f07] w-full flex items-center transition-all duration-1000`}
       >
-        <div className="absolute left-3 top-0 h-full flex items-center gap-2">
+        <div className="min-[761px]:hidden flex items-center h-[8vh] pl-4">
+          <div
+            className="h-full flex justify-center items-center"
+            onClick={() => setDrawer(!drawer)}
+          >
+            <RxHamburgerMenu className="w-[30px] h-auto" color="white" />
+          </div>
+        </div>
+        
+        <div className="absolute right-3 top-0 h-full flex items-center gap-2">
           <a
             rel="noreferrer"
             target="_blank"
@@ -290,14 +299,6 @@ export default function Navbar({ status, setStatus }) {
           >
             Contacto
           </Link>
-        </div>
-        <div className="flex justify-end items-center gap-5 min-[761px]:hidden w-full h-[8vh]">
-          <div
-            className="h-full flex justify-center items-center px-4"
-            onClick={() => setDrawer(!drawer)}
-          >
-            <RxHamburgerMenu className="w-[30px] h-auto" color="white" />
-          </div>
         </div>
       </div>
 
