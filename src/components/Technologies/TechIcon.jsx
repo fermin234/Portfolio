@@ -71,7 +71,7 @@ const TechIcon = ({
         >
           {tech.slice(0, 2).toUpperCase()}
         </div>
-        <h1 className="flex items-center">
+        <h1 className="flex items-center text-white">
           <div style={{ backgroundColor: color }} className="w-[10px] h-[10px] rounded-full mr-2"></div>
           {name}
         </h1>
@@ -87,7 +87,7 @@ const TechIcon = ({
         src={iconSrc}
         title={alt}
       />
-      <h1 className="flex items-center">
+      <h1 className="flex items-center text-white">
         <div style={{ backgroundColor: color }} className="w-[10px] h-[10px] rounded-full mr-2"></div>
         {name}
       </h1>
