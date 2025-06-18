@@ -2,8 +2,8 @@ import TechIcon from './TechIcon'
 
 export default function Technologies() {
   return (
-    <section id="technologies" className="bg-color-6 py-[4vh] w-full min-h-screen flex flex-col items-center font-Montserrat">
-      <h1 className="mb-5 text-[40px] max-[715px]:text-[28px] font-bold text-color-3 text-center">MÍS TECNOLOGÍAS</h1>
+    <section id="technologies" className="bg-[#0e141b] py-[4vh] w-full min-h-screen flex flex-col items-center font-Montserrat">
+      <h1 className="mb-5 text-[40px] max-[715px]:text-[28px] font-bold text-white text-center">MÍS TECNOLOGÍAS</h1>
       <div className="w-full grid  max-[476px]:grid-cols-2 max-[314px]:grid-cols-1 grid-cols-3">
         <div id="front" className="flex justify-center py-5">
           <div className="flex flex-col gap-5">
