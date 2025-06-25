@@ -22,12 +22,12 @@ export default function OtherCard({ project }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    if (textRef.current && containerRef.current) {
+    if (textRef.current && containerRef.current && !seeMore) {
       const isOverflowing =
         textRef.current.scrollHeight > containerRef.current.clientHeight;
       setTextOverflows(isOverflowing);
     }
-  }, [description]);
+  }, [description, seeMore]);
 
   const handleSeeMoreToggle = () => {
     setSeeMore(!seeMore);
@@ -52,17 +52,25 @@ export default function OtherCard({ project }) {
           <img
             src={images[0]}
             alt="imagenPrincipal"
-            className="w-[350px] h-[350px] object-contain hover:opacity-40 hover:cursor-pointer z-30 hover:z-10 float-left hidden min-[933px]:flex"
+            className="w-[350px] h-[350px] object-contain hover:opacity-40 hover:cursor-pointer z-30 hover:z-10 float-left hidden min-[933px]:block mr-4 mb-4"
             onClick={openModal}
           />
 
           <div
             ref={containerRef}
-            className="overflow-hidden"
-            style={{ maxHeight: seeMore ? "none" : "400px" }}
+            className={`${seeMore ? "" : "overflow-hidden"}`}
+            style={{ 
+              maxHeight: seeMore ? "none" : "400px"
+            }}
           >
-            <div ref={textRef} className="prose prose-lg text-white pl-2">
+            <div 
+              ref={textRef} 
+              className="prose prose-lg text-white pl-2"
+            >
               {description}
+              {seeMore && (
+                <div className="clear-both w-full"></div>
+              )}
             </div>
           </div>
 
@@ -70,26 +78,25 @@ export default function OtherCard({ project }) {
             <div className="h-16 bg-gradient-to-t from-[#0e141b] to-transparent w-full mt-[-64px] relative z-10"></div>
           )}
 
-          <div>
-            {textOverflows && (
-              <button
-                className="text-[#ecd85d] transition-colors duration-300 hover:opacity-50 font-extralight flex justify-start max-[932px]:w-full max-[932px]:justify-center pl-2 max-[932px]:pl-0"
-                onClick={handleSeeMoreToggle}
-              >
-                {seeMore ? "Ver menos" : "Ver más..."}
-              </button>
-            )}
-            <div className="relative flex justify-center items-center min-[933px]:hidden">
-              <img
-                src={images[0]}
-                alt="imagenPrincipal"
-                className="hover:opacity-40 hover:cursor-pointer z-30 hover:z-10"
-                onClick={openModal}
-              />
-              <h1 className="absolute font-Montserrat text-2xl text-white font-bold z-20">
-                Ver imágenes
-              </h1>
-            </div>
+          {textOverflows && (
+            <button
+              className="text-[#ecd85d] transition-colors duration-300 hover:opacity-50 font-extralight flex justify-start max-[932px]:w-full max-[932px]:justify-center pl-2 max-[932px]:pl-0 mt-2 clear-both"
+              onClick={handleSeeMoreToggle}
+            >
+              {seeMore ? "Ver menos" : "Ver más..."}
+            </button>
+          )}
+
+          <div className="relative flex justify-center items-center min-[933px]:hidden mt-4">
+            <img
+              src={images[0]}
+              alt="imagenPrincipal"
+              className="hover:opacity-40 hover:cursor-pointer z-30 hover:z-10 max-w-full"
+              onClick={openModal}
+            />
+            <h1 className="absolute font-Montserrat text-2xl text-white font-bold z-20">
+              Ver imágenes
+            </h1>
           </div>
         </div>
 
