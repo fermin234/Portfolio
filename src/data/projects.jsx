@@ -37,7 +37,7 @@ const projects = [
       </>
     ,
     technologies: [<Javascript key="javascript" />, <Express key="express" />, <Nodejs key="nodejs" />, <Sequelize key="sequelize" />, <PostgreSQL key="postgresql" />, <React key="react" />, <Tailwind key="tailwind" />, <Git key="git" />, <HTML key="html" />, <GitHub key="github" />],
-    aplication: 'https://www.martineznessicampos.com/',
+    aplication: 'https://martinez-inmobiliaria-srl-m853.vercel.app/',
     code: 'https://github.com/GroupFiveDev/Martinez-Inmobiliaria-SRL',
     images: imagesInmobiliariaMartinez,
     responsive: 5,
