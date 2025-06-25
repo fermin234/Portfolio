@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect } from "react";
-import useModal from "../../../hooks/useModal/useModal";
-import ImageModal from "../../Modal/ImageModal/ImageModal";
-import Carrousel from "../../Carrousel/Carrousel";
-import { AiOutlineStar } from "react-icons/ai";
+import { useState, useRef, useEffect } from 'react';
+import useModal from '../../../hooks/useModal/useModal';
+import ImageModal from '../../Modal/ImageModal/ImageModal';
+import Carrousel from '../../Carrousel/Carrousel';
+import { AiOutlineStar } from 'react-icons/ai';
 
 export default function OtherCard({ project }) {
   const {
@@ -44,7 +44,7 @@ export default function OtherCard({ project }) {
         </h1>
         <AiOutlineStar
           className={`${
-            !featured && "hidden"
+            !featured && 'hidden'
           } absolute left-2 top-2 w-6 h-6 text-[#ecd85d]`}
         />
 
@@ -58,13 +58,13 @@ export default function OtherCard({ project }) {
 
           <div
             ref={containerRef}
-            className={`${seeMore ? "" : "overflow-hidden"}`}
-            style={{ 
-              maxHeight: seeMore ? "none" : "400px"
+            className={`${seeMore ? '' : 'overflow-hidden'}`}
+            style={{
+              maxHeight: seeMore ? 'none' : '400px'
             }}
           >
-            <div 
-              ref={textRef} 
+            <div
+              ref={textRef}
               className="prose prose-lg text-white pl-2"
             >
               {description}
@@ -83,7 +83,7 @@ export default function OtherCard({ project }) {
               className="text-[#ecd85d] transition-colors duration-300 hover:opacity-50 font-extralight flex justify-start max-[932px]:w-full max-[932px]:justify-center pl-2 max-[932px]:pl-0 mt-2 clear-both"
               onClick={handleSeeMoreToggle}
             >
-              {seeMore ? "Ver menos" : "Ver más..."}
+              {seeMore ? 'Ver menos' : 'Ver más...'}
             </button>
           )}
 

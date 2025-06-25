@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { FaArrowUp } from "react-icons/fa";
-import { HiOutlineArrowNarrowUp } from "react-icons/hi";
-import { Link } from "react-scroll";
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { HiOutlineArrowNarrowUp } from 'react-icons/hi';
+import { Link } from 'react-scroll';
 
 export default function Arrow() {
   const [scroll, setScroll] = useState(false);
@@ -16,11 +15,11 @@ export default function Arrow() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeNav);
+    window.addEventListener('scroll', changeNav);
   }, []);
 
   return (
-    <div className={`fixed left-3 bottom-3 ${scroll ? "show" : "hide"}`}>
+    <div className={`fixed left-3 bottom-3 ${scroll ? 'show' : 'hide'}`}>
       <Link
         to="home"
         smooth={true}

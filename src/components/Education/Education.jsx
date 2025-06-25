@@ -16,7 +16,7 @@ export default function Education() {
           <a
             href="https://www.soyhenry.com/webfullstack"
             target="_blank"
-            className="hover:opacity-50"
+            className="hover:opacity-50" rel="noreferrer"
           >
             <img
               src="https://www.soyhenry.com/_next/static/media/HenryLogo.bb57fd6f.svg"
@@ -39,7 +39,7 @@ export default function Education() {
           <a
             href="https://www.soyhenry.com/"
             target="_blank"
-            className="hover:opacity-50"
+            className="hover:opacity-50" rel="noreferrer"
           >
             <img
               src="https://www.soyhenry.com/_next/static/media/HenryLogo.bb57fd6f.svg"

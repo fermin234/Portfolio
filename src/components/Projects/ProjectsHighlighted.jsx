@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import projects from "../../data/projects";
-import CardProject from "../Card/CardProjectHighlighted/CardProjectHighlighted";
-import { motion, AnimatePresence } from "framer-motion";
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import projects from '../../data/projects';
+import CardProject from '../Card/CardProjectHighlighted/CardProjectHighlighted';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ProjectsHighlighted() {
   const [isVisible, setIsVisible] = useState(false);
@@ -19,13 +19,13 @@ export default function ProjectsHighlighted() {
           setIsVisible(true);
         }
       },
-      { 
+      {
         threshold: 0.1,
-        rootMargin: "200px 0px"
+        rootMargin: '200px 0px'
       }
     );
 
-    const section = document.getElementById("projects");
+    const section = document.getElementById('projects');
     if (section) {
       observer.observe(section);
     }
@@ -42,7 +42,7 @@ export default function ProjectsHighlighted() {
       id="projects"
       className="bg-[#253447] w-full py-[4vh] min-[1550px]:px-20 px-4 flex flex-col items-center font-Montserrat"
     >
-      <motion.h1 
+      <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
@@ -52,7 +52,7 @@ export default function ProjectsHighlighted() {
       </motion.h1>
 
       <AnimatePresence mode="wait">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

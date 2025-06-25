@@ -16,5 +16,5 @@ export default function About() {
         Currículum
       </a>
     </section>
-  )
+  );
 }

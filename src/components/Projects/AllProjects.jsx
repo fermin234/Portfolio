@@ -1,7 +1,7 @@
-import CardProyect from "../Card/CardProyect/CardProyect";
-import projects from "../../data/projects";
-import { useEffect } from "react";
-import { motion } from "framer-motion";
+import CardProyect from '../Card/CardProyect/CardProyect';
+import projects from '../../data/projects';
+import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export default function AllProjects() {
   useEffect(() => {
@@ -10,7 +10,7 @@ export default function AllProjects() {
 
   return (
     <section className="bg-[#1a2433] py-[8vh] min-h-screen relative">
-      <motion.h1 
+      <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

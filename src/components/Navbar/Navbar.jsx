@@ -1,22 +1,22 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { Link } from "react-scroll";
-import { Link as RouterLink } from "react-router-dom";
-import { BsFiletypePdf } from "react-icons/bs";
-import { AiFillLinkedin } from "react-icons/ai";
-import { ImWhatsapp } from "react-icons/im";
-import { IoIosArrowDown } from "react-icons/io";
-import "./Navbar.css";
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
+import { BsFiletypePdf } from 'react-icons/bs';
+import { AiFillLinkedin } from 'react-icons/ai';
+import { ImWhatsapp } from 'react-icons/im';
+import { IoIosArrowDown } from 'react-icons/io';
+import './Navbar.css';
 
 export default function Navbar({ status, setStatus }) {
   const { pathname } = useLocation();
   const history = useHistory();
   const [drawer, setDrawer] = useState(false);
   const [color, setColor] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState('home');
 
   const changeNav = () => {
     setDrawer(false);
@@ -29,13 +29,13 @@ export default function Navbar({ status, setStatus }) {
 
   const updateActiveSection = () => {
     const sections = [
-      "home",
-      "about",
-      "education",
-      "experience",
-      "technologies",
-      "projects",
-      "contact",
+      'home',
+      'about',
+      'education',
+      'experience',
+      'technologies',
+      'projects',
+      'contact',
     ];
     const scrollPos = window.scrollY;
     const windowHeight = window.innerHeight;
@@ -44,11 +44,11 @@ export default function Navbar({ status, setStatus }) {
       scrollPos + windowHeight >=
       document.documentElement.scrollHeight - 50
     ) {
-      setActiveSection("contact");
+      setActiveSection('contact');
       return;
     }
 
-    let currentSection = "home";
+    let currentSection = 'home';
     let maxVisibleArea = 0;
 
     sections.forEach((sectionId) => {
@@ -59,8 +59,8 @@ export default function Navbar({ status, setStatus }) {
         const sectionBottom = rect.bottom;
         const sectionHeight = rect.height;
 
-        let visibleTop = Math.max(0, -sectionTop);
-        let visibleBottom = Math.min(sectionHeight, windowHeight - sectionTop);
+        const visibleTop = Math.max(0, -sectionTop);
+        const visibleBottom = Math.min(sectionHeight, windowHeight - sectionTop);
         let visibleArea = Math.max(0, visibleBottom - visibleTop);
 
         if (
@@ -81,23 +81,23 @@ export default function Navbar({ status, setStatus }) {
   };
 
   function handleClick(e) {
-    history.push("/");
+    history.push('/');
 
     setTimeout(() => {
       const element = document.getElementById(e);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", duration: 1000 });
+        element.scrollIntoView({ behavior: 'smooth', duration: 1000 });
       }
     }, 100);
   }
 
   function handleClickProject(e) {
-    history.push("/");
+    history.push('/');
 
     setTimeout(() => {
       const element = document.getElementById(e);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", duration: 1000 });
+        element.scrollIntoView({ behavior: 'smooth', duration: 1000 });
       }
     }, 100);
 
@@ -105,35 +105,35 @@ export default function Navbar({ status, setStatus }) {
   }
 
   const isProjectsActive = () => {
-    return activeSection === "projects" || pathname === "/projects";
+    return activeSection === 'projects' || pathname === '/projects';
   };
 
   const isFeaturedProjectsActive = () => {
-    return activeSection === "projects" && pathname === "/";
+    return activeSection === 'projects' && pathname === '/';
   };
 
   const isAllProjectsActive = () => {
-    return pathname === "/projects";
+    return pathname === '/projects';
   };
 
   useEffect(() => {
     const handleScroll = () => {
       changeNav();
-      if (pathname === "/") {
+      if (pathname === '/') {
         updateActiveSection();
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-    if (pathname === "/") {
+    if (pathname === '/') {
       updateActiveSection();
     } else {
-      setActiveSection("");
+      setActiveSection('');
     }
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [pathname]);
 
@@ -143,7 +143,7 @@ export default function Navbar({ status, setStatus }) {
     >
       <div
         className={`${
-          color ? "bg-[#120f07] h-[4vh]" : "gradient h-[8vh]"
+          color ? 'bg-[#120f07] h-[4vh]' : 'gradient h-[8vh]'
         } relative max-[620px]:bg-[#120f07] w-full flex items-center transition-all duration-1000`}
       >
         <div className="min-[761px]:hidden flex items-center h-[8vh] pl-4">
@@ -154,7 +154,7 @@ export default function Navbar({ status, setStatus }) {
             <RxHamburgerMenu className="w-[30px] h-auto" color="white" />
           </div>
         </div>
-        
+
         <div className="absolute right-3 top-0 h-full flex items-center gap-2">
           <a
             rel="noreferrer"
@@ -196,9 +196,9 @@ export default function Navbar({ status, setStatus }) {
           <RouterLink
             to="/"
             className={`${
-              pathname !== "/" ? "" : "hidden"
+              pathname !== '/' ? '' : 'hidden'
             } navbar-item hover:cursor-pointer ${
-              activeSection === "home" ? "active" : ""
+              activeSection === 'home' ? 'active' : ''
             }`}
           >
             Inicio
@@ -208,9 +208,9 @@ export default function Navbar({ status, setStatus }) {
             smooth="true"
             duration={1000}
             className={`navbar-item hover:cursor-pointer ${
-              activeSection === "about" ? "active" : ""
+              activeSection === 'about' ? 'active' : ''
             }`}
-            onClick={() => handleClick("about")}
+            onClick={() => handleClick('about')}
           >
             Sobre mí
           </Link>
@@ -219,9 +219,9 @@ export default function Navbar({ status, setStatus }) {
             smooth="true"
             duration={1000}
             className={`navbar-item hover:cursor-pointer ${
-              activeSection === "education" ? "active" : ""
+              activeSection === 'education' ? 'active' : ''
             }`}
-            onClick={() => handleClick("education")}
+            onClick={() => handleClick('education')}
           >
             Educación
           </Link>
@@ -230,9 +230,9 @@ export default function Navbar({ status, setStatus }) {
             smooth="true"
             duration={1000}
             className={`navbar-item hover:cursor-pointer ${
-              activeSection === "experience" ? "active" : ""
+              activeSection === 'experience' ? 'active' : ''
             }`}
-            onClick={() => handleClick("experience")}
+            onClick={() => handleClick('experience')}
           >
             Experiencia
           </Link>
@@ -241,16 +241,16 @@ export default function Navbar({ status, setStatus }) {
             smooth="true"
             duration={1000}
             className={`navbar-item hover:cursor-pointer ${
-              activeSection === "technologies" ? "active" : ""
+              activeSection === 'technologies' ? 'active' : ''
             }`}
-            onClick={() => handleClick("technologies")}
+            onClick={() => handleClick('technologies')}
           >
             Mís Tecnologías
           </Link>
           <div
             className={`navbar-item hover:cursor-pointer w-fit ${
-              isProjectsActive() ? "active" : ""
-            } ${status ? "hover:opacity-100" : ""}`}
+              isProjectsActive() ? 'active' : ''
+            } ${status ? 'hover:opacity-100' : ''}`}
             onClick={() => setStatus(!status)}
             onMouseEnter={() => setStatus(true)}
             onMouseLeave={() => setStatus(false)}
@@ -261,7 +261,7 @@ export default function Navbar({ status, setStatus }) {
             </p>
             <div
               className={`${
-                status ? "absolute" : "hidden"
+                status ? 'absolute' : 'hidden'
               } bg-black flex flex-col top-full items-center justify-center text-center gap-2 py-2 w-[132px]`}
             >
               <Link
@@ -269,9 +269,9 @@ export default function Navbar({ status, setStatus }) {
                 smooth="true"
                 duration={1000}
                 className={`hover:cursor-pointer hover:opacity-25 ${
-                  isFeaturedProjectsActive() ? "text-[#ecd85d]" : ""
+                  isFeaturedProjectsActive() ? 'text-[#ecd85d]' : ''
                 }`}
-                onClick={() => handleClickProject("projects")}
+                onClick={() => handleClickProject('projects')}
               >
                 Proyectos <br /> Destacados
               </Link>
@@ -280,9 +280,9 @@ export default function Navbar({ status, setStatus }) {
                 smooth="true"
                 duration={1000}
                 className={`hover:cursor-pointer hover:opacity-25 ${
-                  isAllProjectsActive() ? "text-[#ecd85d]" : ""
+                  isAllProjectsActive() ? 'text-[#ecd85d]' : ''
                 }`}
-                onClick={() => handleClickProject("projects")}
+                onClick={() => handleClickProject('projects')}
               >
                 Todos los <br /> proyectos
               </RouterLink>
@@ -293,9 +293,9 @@ export default function Navbar({ status, setStatus }) {
             smooth="true"
             duration={1000}
             className={`navbar-item hover:cursor-pointer ${
-              activeSection === "contact" ? "active" : ""
+              activeSection === 'contact' ? 'active' : ''
             }`}
-            onClick={() => handleClick("contact")}
+            onClick={() => handleClick('contact')}
           >
             Contacto
           </Link>
@@ -304,7 +304,7 @@ export default function Navbar({ status, setStatus }) {
 
       <div
         onClick={() => setDrawer(false)}
-        className={`${drawer ? "" : "hidden"} w-full h-screen`}
+        className={`${drawer ? '' : 'hidden'} w-full h-screen`}
       >
         <div
           className={`flex flex-col items-center gap-2 py-2 bg-black text-white`}
@@ -312,7 +312,7 @@ export default function Navbar({ status, setStatus }) {
           <a
             href="/"
             className={`${
-              pathname !== "/" ? "" : "hidden"
+              pathname !== '/' ? '' : 'hidden'
             } w-full text-center py-1`}
           >
             Inicio
@@ -322,7 +322,7 @@ export default function Navbar({ status, setStatus }) {
             smooth="true"
             duration={1000}
             className="hover:cursor-pointer w-full text-center py-1"
-            onClick={() => handleClick("about")}
+            onClick={() => handleClick('about')}
           >
             Sobre mí
           </Link>
@@ -331,7 +331,7 @@ export default function Navbar({ status, setStatus }) {
             smooth="true"
             duration={1000}
             className="hover:cursor-pointer w-full text-center py-1"
-            onClick={() => handleClick("education")}
+            onClick={() => handleClick('education')}
           >
             Educación
           </Link>
@@ -340,7 +340,7 @@ export default function Navbar({ status, setStatus }) {
             smooth="true"
             duration={1000}
             className="hover:cursor-pointer w-full text-center py-1"
-            onClick={() => handleClick("experience")}
+            onClick={() => handleClick('experience')}
           >
             Experiencia
           </Link>
@@ -349,7 +349,7 @@ export default function Navbar({ status, setStatus }) {
             smooth="true"
             duration={1000}
             className="hover:cursor-pointer w-full text-center py-1"
-            onClick={() => handleClick("technologies")}
+            onClick={() => handleClick('technologies')}
           >
             Mís Tecnologías
           </Link>
@@ -358,7 +358,7 @@ export default function Navbar({ status, setStatus }) {
             smooth="true"
             duration={1000}
             className="hover:cursor-pointer w-full text-center py-1"
-            onClick={() => handleClick("technologies")}
+            onClick={() => handleClick('technologies')}
           >
             Proyectos
           </Link>
@@ -367,7 +367,7 @@ export default function Navbar({ status, setStatus }) {
             smooth="true"
             duration={1000}
             className="hover:cursor-pointer w-full text-center py-1"
-            onClick={() => handleClick("contact")}
+            onClick={() => handleClick('contact')}
           >
             Contacto
           </Link>

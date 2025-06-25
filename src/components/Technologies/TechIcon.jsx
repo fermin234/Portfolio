@@ -53,19 +53,19 @@ const techIcons = {
 
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
-const TechIcon = ({ 
-  tech, 
-  alt = tech, 
+const TechIcon = ({
+  tech,
+  alt = tech,
   name = tech === 'reactnative' ? 'React Native' : capitalize(tech),
-  color, 
-  className = "max-[750px]:w-[30px] w-[60px]" 
+  color,
+  className = 'max-[750px]:w-[30px] w-[60px]'
 }) => {
   const iconSrc = techIcons[tech.toLowerCase()];
-  
+
   if (!iconSrc) {
     return (
       <div className="flex justify-start items-center gap-2">
-        <div 
+        <div
           className={`${className} bg-gray-400 rounded flex items-center justify-center text-white text-xs font-bold`}
           title={alt}
         >
@@ -95,4 +95,4 @@ const TechIcon = ({
   );
 };
 
-export default TechIcon; 
+export default TechIcon;

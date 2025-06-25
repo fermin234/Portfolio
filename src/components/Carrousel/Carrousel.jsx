@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Carousel = ({ images, isInModal }) => {
   const { pathname } = useHistory().location;
@@ -16,7 +16,7 @@ const Carousel = ({ images, isInModal }) => {
   }, [currentIndex]);
 
   const handleNext = (e) => {
-    if (e) e.stopPropagation();
+    if (e) {e.stopPropagation();}
     setDirection(1);
     setCurrentIndex((prevIndex) =>
       prevIndex + 1 === images.length ? 0 : prevIndex + 1
@@ -24,7 +24,7 @@ const Carousel = ({ images, isInModal }) => {
   };
 
   const handlePrevious = (e) => {
-    if (e) e.stopPropagation();
+    if (e) {e.stopPropagation();}
     setDirection(-1);
     setCurrentIndex((prevIndex) =>
       prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
@@ -48,10 +48,10 @@ const Carousel = ({ images, isInModal }) => {
     })
   };
 
-  const containerClass = isInModal 
-    ? "relative w-full h-full overflow-hidden rounded-lg bg-[#333]"
+  const containerClass = isInModal
+    ? 'relative w-full h-full overflow-hidden rounded-lg bg-[#333]'
     : `relative w-full h-full overflow-hidden rounded-lg bg-[#333] ${
-        pathname.includes("projects") ? "" : "max-h-[532px]"
+        pathname.includes('projects') ? '' : 'max-h-[532px]'
       }`;
 
   return (
@@ -65,7 +65,7 @@ const Carousel = ({ images, isInModal }) => {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
+            x: { type: 'spring', stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 }
           }}
           className="absolute w-full h-full flex items-center justify-center"
@@ -103,7 +103,7 @@ const Carousel = ({ images, isInModal }) => {
           <motion.button
             key={index}
             className={`w-2 h-2 rounded-full ${
-              currentIndex === index ? "bg-white" : "bg-white/50"
+              currentIndex === index ? 'bg-white' : 'bg-white/50'
             }`}
             onClick={(e) => {
               e.stopPropagation();

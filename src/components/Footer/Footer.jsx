@@ -34,7 +34,7 @@ export default function Footer() {
         </a>
       </div>
       <p className='text-center text-white'>
-        {"© 2023 - Todos los derechos reservados por "}
+        {'© 2023 - Todos los derechos reservados por '}
         <a
           className='text-[#ecd85d]'
           rel="noreferrer"
@@ -44,5 +44,5 @@ export default function Footer() {
         </a>
       </p>
     </footer>
-  )
+  );
 }

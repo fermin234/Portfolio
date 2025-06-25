@@ -1,4 +1,4 @@
-import TechIcon from './TechIcon'
+import TechIcon from './TechIcon';
 
 export default function Technologies() {
   return (
@@ -50,5 +50,5 @@ export default function Technologies() {
         </div>
       </div>
     </section>
-  )
+  );
 }

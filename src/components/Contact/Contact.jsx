@@ -10,5 +10,5 @@ export default function Contact() {
       >Enviame un email
       </a>
     </section>
-  )
+  );
 }

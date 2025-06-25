@@ -1,4 +1,4 @@
-import { Link } from "react-scroll";
+import { Link } from 'react-scroll';
 
 export default function HomeSection() {
   return (
@@ -7,7 +7,7 @@ export default function HomeSection() {
       className="bg-[#0e141b] h-screen font-Montserrat flex flex-col justify-center items-center md:items-start px-10 md:pl-[20%] text-center md:text-left gap-10"
     >
       <h1 className="font-extrabold text-4xl text-white">
-        Hola, mi nombre es{" "}
+        Hola, mi nombre es{' '}
         <span className="text-[#ecd85d]">Solaberrieta, Fermín</span> <br />Y soy
         FullStack Developer.
       </h1>
